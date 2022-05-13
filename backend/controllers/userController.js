@@ -105,7 +105,7 @@ class UserController {
         res.send({"user":req.user})
 
     }
-
+    // reset password email link
     static sendUserPasswordResetEmail = async (req, res) => {
         const {email} = req.body
         if (email) {
@@ -126,6 +126,41 @@ class UserController {
             
         } else {
             res.send({ "status":"failed", "message":"Email field is required, please enter your email" })
+            
+        }
+
+    }
+    // upon clicking above reset email link submit thiche pachi ra token validation-15 mins samma
+
+    static userPasswordReset = async(req, res) =>{
+        const {password, password_confirmation} = req.body
+        const {id, token} = req.params
+        const user = await UserModel.findById(id)
+        const new_secret = user._id + process.env.JWT_SECRET_KEY
+        try {
+            jwt.verify(token, new_secret)
+            if (password && password_confirmation) {
+                if (password!==password_confirmation) {
+                    res.send({ "status":"failed", "message":"New password and password you entered doesn't match" })
+                    
+                } else {
+                    const salt = await bcrypt.genSalt(10)
+                    const newHashPassword = await bcrypt.hash(password, salt)
+                    await UserModel.findByIdAndUpdate(user._id, { $set: { password:newHashPassword } })
+                    res.send({ "status":"success", "message":"Password reset successfully" })
+
+                }
+                
+            } else {
+                res.send({ "status":"failed", "message":"All fields are required" })
+
+                
+            }
+
+            
+        } catch (error) {
+            res.send({ "status":"failed", "message":"Invalid token" })
+            // front end format password, confirm password and then submit
             
         }
 
