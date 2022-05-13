@@ -78,6 +78,7 @@ class UserController {
             
         }
     }
+
     static changeUserPassword = async(req, res) => {
         const{password, password_confirmation} = req.body
         if (password && password_confirmation) {
@@ -87,6 +88,8 @@ class UserController {
             } else {
                 const salt = await bcrypt.genSalt(10)
                 const newHashPassword = await bcrypt.hash(password, salt)
+                // console.log(req.user)
+                res.send({"status":"success", "message":"Password changed successfully"})
 
             }
 
