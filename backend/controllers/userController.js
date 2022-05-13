@@ -1,6 +1,7 @@
 const UserModel = require("../models/User.js");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const transporter = require("../config/emailConfig.js");
 
 class UserController {
     static userRegistration = async (req, res)=>{
@@ -116,7 +117,18 @@ class UserController {
                 const link = `http://127.0.0.1:3000/api/user/reset/${user._id}/${token}` //reset link will go through frontend
                 // http://127.0.0.1:3000/api/user/reset/:id/:token React routes id
                 console.log(link)
-                res.send({ "status":"success", "message":"Password reset email has been sent to your email please kindly check your email" })
+
+
+                // Send Email
+                let info = await transporter.sendMail({
+                    from:process.env.EMAIL_FROM,
+                    to:user.email,
+                    subject:"Hamro Garden - Password Reset link",
+                    text:"Hello world",
+                    html:`<a href=${link}>Click Here</a> to reset your password`
+                })
+
+                res.send({ "status":"success", "message":"Password reset email has been sent to your email please kindly check your email", "info":info })
                 
                 
             } else {
