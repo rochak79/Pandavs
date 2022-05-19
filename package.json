@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
-    "dev":"nodemon backend/app.js",
+    "dev": "nodemon backend/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/rochak79/Pandavs/issues"
   },
-  "homepage": "https://github.com/rochak79/Pandavs#readme"
+  "homepage": "https://github.com/rochak79/Pandavs#readme",
+  "dependencies": {
+    "multer": "^1.4.4"
+  }
 }

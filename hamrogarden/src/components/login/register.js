@@ -7,7 +7,7 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //   const [cpassword, setCpassword] = useState("");
+  const [password_confirmation, setPassword_confirmation] = useState("");
   const [tc, setTc] = useState("");
 
   const register = (e) => {
@@ -16,8 +16,8 @@ const Register = () => {
       name,
       email,
       password,
-      //   cpassword,
-      //   tc,
+      password_confirmation,
+      tc,
     };
 
     axios
@@ -36,7 +36,7 @@ const Register = () => {
   };
   return (
     <div>
-      <section>
+      <section className="section">
         <div className="container">
           <div className="user singinBx">
             <div className="formBx">
@@ -63,12 +63,12 @@ const Register = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 ></input>
-                {/* <input
+                <input
                   type="password"
                   name=""
                   placeholder="Confirm Password"
-                  value={cpassword}
-                  onChange={(e) => setCpassword(e.target.value)}
+                  value={password_confirmation}
+                  onChange={(e) => setPassword_confirmation(e.target.value)}
                 ></input>
                 <input
                   type="email"
@@ -76,25 +76,15 @@ const Register = () => {
                   placeholder="Terms and Condition"
                   value={tc}
                   onChange={(e) => setTc(e.target.value)}
-                ></input> */}
+                ></input>
 
-                {/* <input type="password" name="" placeholder="Confirm Password" /> */}
-                {/* <input type="submit" name="" value="Login" />
-                <p class="signup">
-                  {" "}
-                  Already have an account?
-                  <button type="submit" onClick={register}>
-                    Register
-                  </button>
-                </p> */}
-                {/* <input type="submit" name="" value="Register" /> */}
-                <button type="submit" onClick={register}>
+                <button className="loginbtn" type="submit" onClick={register}>
                   Register
                 </button>
                 <p class="signup">
                   {" "}
                   Already have an account?
-                  <Link to="/register">Login</Link>
+                  <Link to="/">Login</Link>
                 </p>
               </form>
             </div>

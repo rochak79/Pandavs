@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import loginsvg from "../../images/login.jpg";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -22,7 +23,7 @@ const Login = () => {
           localStorage.setItem("token", token);
           alert("Login Success");
           //   console.log(token);
-          window.location.replace("/");
+          // window.location.replace("/");
         }
       })
       .catch((err) => {
@@ -33,15 +34,15 @@ const Login = () => {
 
   return (
     <div>
-      <section>
+      <section className="section">
         <div className="container">
           <div className="user singinBx">
             <div class="imgBx">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2xyA1UXB9IMvrfdTqLF8q_dA4bEeXqo3LSBSod2jR36rcv2-bAyoJ6iWc0fwMJhYHlU&usqp=CAU"></img>
+              <img src={loginsvg} className="loginsvg"></img>
             </div>
             <div className="formBx">
               <form>
-                <h2>Sign In</h2>
+                <h2 className="signinh2">Sign In</h2>
                 <input
                   type="email"
                   name=""
@@ -56,7 +57,8 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type="submit" onClick={login}>
+
+                <button className="loginbtn" type="submit" onClick={login}>
                   Login
                 </button>
                 <p class="signup">

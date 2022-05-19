@@ -4,27 +4,27 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-section {
+.section {
   position: relative;
   min-height: 100vh;
-  background-color: #358873;
+  background: gainsboro;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  padding: 1.5em;
 }
-
-section .container {
+.section .container {
   position: relative;
-  width: 800px;
-  height: 500px;
+  width: 80%;
+  height: 85vh;
+  border-radius: 0.5em;
   background: #fff;
-
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   overflow: hidden;
 }
 
-section .container .user {
+.section .container .user {
   position: relative;
   top: 0;
   left: 0;
@@ -32,16 +32,14 @@ section .container .user {
   height: 100%;
   display: flex;
 }
-
-section .container .user .imgBx {
+.section .container .user .imgBx {
   position: relative;
-  width: 50%;
+  width: 60%;
   height: 100%;
-  background: #ff0;
   transition: 0.5s;
 }
 
-section .container .user .imgBx img {
+.section .container .user .imgBx img {
   position: absolute;
   top: 0;
   left: 0;
@@ -50,7 +48,7 @@ section .container .user .imgBx img {
   object-fit: cover;
 }
 
-section .container .user .formBx {
+.section .container .user .formBx {
   position: relative;
   width: 50%;
   height: 100%;
@@ -60,9 +58,10 @@ section .container .user .formBx {
   align-items: center;
   padding: 40px;
   transition: 0.5s;
+  text-align: justify;
 }
 
-section .container .user .formBx form h2 {
+.section .container .user .formBx form h2 {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
@@ -73,7 +72,7 @@ section .container .user .formBx form h2 {
   color: #555;
 }
 
-section .container .user .formBx form input {
+.section .container .user .formBx form input {
   position: relative;
   width: 100%;
   padding: 10px;
@@ -88,7 +87,7 @@ section .container .user .formBx form input {
   font-weight: 300;
 }
 
-section .container .user .formBx form input[type="submit"] {
+.section .container .user .formBx form input[type="submit"] {
   max-width: 100px;
   background: #178f2b;
   color: #fff;
@@ -99,7 +98,7 @@ section .container .user .formBx form input[type="submit"] {
   transition: 0.5s;
 }
 
-section .container .user .formBx form .signup {
+.section .container .user .formBx form .signup {
   position: relative;
   margin-top: 20px;
   font-size: 12px;
@@ -109,20 +108,51 @@ section .container .user .formBx form .signup {
   font-weight: 300;
 }
 
-section .container .user .formBx form .signup a {
+.section .container .user .formBx form .signup a {
   font-weight: 600;
   text-decoration: none;
   color: #677eff;
+  font-size: 13px;
 }
 
-section .container .signupBx {
+.section .container .signupBx {
   pointer-events: none;
 }
 
-section .container .signupBx .formBx {
+.section .container .signupBx .formBx {
   left: 100%;
 }
 
-section .container .signupBx .imgBx {
+.section .container .signupBx .imgBx {
   left: -100%;
+}
+.loginbtn {
+  width: 100px;
+  border-radius: 1em;
+  padding: 3px 10px;
+  border: none;
+  background: #677eff;
+  color: white;
+}
+.signinh2 {
+  font-size: 30px !important;
+}
+
+@media only screen and (max-width: 991.98px) {
+  .section .container .user {
+    flex-direction: column;
+  }
+  .section .container .user .imgBx {
+    width: 100%;
+    height: 100%;
+  }
+  .section .container .user .formBx {
+    width: 100%;
+  }
+  .signinh2 {
+    font-size: 30px !important;
+  }
+  .signup {
+    font-size: 13px !important;
+  }
 }
