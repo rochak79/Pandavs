@@ -1,6 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "",
   "main": "app.js",
   "dependencies": {
     "accepts": "^1.3.8",
@@ -108,7 +109,5 @@
     "url": "n"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {},
-  "description": ""
+  "license": "ISC"
 }
