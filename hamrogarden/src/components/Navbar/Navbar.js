@@ -75,7 +75,7 @@ const Navbar = () => {
           </div>
         </div>
         <nav
-          class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+          class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light"
           id="ftco-navbar"
         >
           <div class="container-fluid">

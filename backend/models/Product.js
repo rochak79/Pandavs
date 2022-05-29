@@ -1,26 +1,26 @@
 const mongoose = require("mongoose");
 
-const productSchema = new mongoose.Schema(
+const productsSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      // required: true,
+      required: true,
     },
     new_price: {
       type: Number,
-      // required: true,
+      required: true,
     },
     old_price: {
       type: Number,
-      // required: true,
+      required: true,
     },
     quantity: {
       type: Number,
-      // required: true,
+      required: true,
     },
     desc: {
       type: String,
-      // required: true,
+      required: true,
     },
     image: {
       type: String,
@@ -28,16 +28,16 @@ const productSchema = new mongoose.Schema(
     },
     stock: {
       type: Number,
-      // required: true,
+      required: true,
     },
     discount: {
       type: Number,
-      // required: true,
+      required: true,
     },
   },
   { timestamps: true }
 );
 
-const productModel = mongoose.model("Product", productSchema);
+const productsModel = mongoose.model("Product", productsSchema);
 
-module.exports = productModel;
+module.exports = productsModel;

@@ -5,10 +5,14 @@ const dotenv = require("dotenv");
 const userRoutes = require("./routes/userRoutes");
 dotenv.config({ path: "./config/.env" });
 const productRoutes = require("./routes/productRoutes");
+const path = require("path");
 
 const app = express();
 const port = process.env.PORT;
 const DATABASE_URL = process.env.DATABASE_URL;
+
+// Static folder visible
+app.use(express.static(path.join(__dirname, "public/images")));
 
 // CORS Policy
 app.use(cors());

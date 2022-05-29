@@ -1,34 +1,25 @@
-const Product = require("../models/Product");
-const express = require("express");
+const Products = require("../models/Product");
+const upload = require("../utils/Upload");
 
-// create product
-exports.createProduct = async (req, res) => {
-  const product = await Product.create(req.body);
-
-  res.status(200).json({
-    success: true,
-    product,
-  });
-};
-
-// get all products
+// Get all Products
 exports.getAllProducts = async (req, res) => {
-  Product.find({}, function (err, products) {
-    if (err) {
-      res.send("Opps! Something went wrong");
-      next();
-    } else {
-      res.status(200).json({
-        success: true,
-        products,
-      });
-    }
-  });
+  try {
+    let products = await Products.find();
+    res.status(200).json({
+      success: true,
+      products,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to get all products.",
+    });
+  }
 };
 
 // get a product
 exports.getProductDetails = async (req, res) => {
-  const product = await Product.findById(req.params.id);
+  const product = await Products.findById(req.params.id);
 
   if (!product) {
     return res.status(404).json({
@@ -45,7 +36,7 @@ exports.getProductDetails = async (req, res) => {
 
 // delete product
 exports.deleteProduct = async (req, res) => {
-  const product = await Product.findById(req.params.id);
+  const product = await Products.findById(req.params.id);
 
   if (!product) {
     res.send({ status: "failed", message: "Product not found" }, 404);
@@ -60,23 +51,22 @@ exports.deleteProduct = async (req, res) => {
 };
 
 // update a product
-exports.updateProduct = async (req, res) => {
-  let product = Product.findById(req.params.id);
-
+exports.updateProduct = async (req, res, next) => {
+  let product = await Products.findById(req.params.id);
   if (!product) {
     return res.status(404).json({
       success: false,
       message: "Product not found",
     });
-  } else {
-    product = await Product.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-      useFindAndModify: false,
-    });
-    res.status(200).json({
-      success: true,
-      product,
-    });
   }
+  productUpdated = await Products.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+    useFindAndModify: false,
+  });
+
+  res.status(200).json({
+    success: true,
+    productUpdated,
+  });
 };
