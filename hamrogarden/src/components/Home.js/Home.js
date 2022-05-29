@@ -39,12 +39,15 @@ const Home = () => {
         </div>
       </div>
 
-      {data.map((result) => {
-        return (
+      
           <>
             <div class="shell">
+            
               <div class="container">
+              
                 <div class="row">
+                {data.map((result) => {
+        return (
                   <div class="col-md-3">
                     <div class="wsk-cp-product">
                       <div class="wsk-cp-img">
@@ -83,12 +86,15 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
+                  );
+                })}
                 </div>
+                
               </div>
+              
             </div>
           </>
-        );
-      })}
+        
       <OurTeams />
     </>
   );
