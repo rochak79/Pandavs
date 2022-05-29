@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import axios from "axios";
+import Video from "../../videos/bg1.mp4";
+import splash from "../../images/splash.jpg";
+import bg from "../../images/bg.jpg";
+import OurTeams from "./OurTeams";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -20,6 +24,21 @@ const Home = () => {
 
   return (
     <>
+      <div className="home_top">
+        <div className="home_left"></div>
+        <div className="home_right">
+          <h4>Even the tinest of flowers can have toughtst root.</h4>
+          <h1>Welcome to Hamro Garden,</h1>
+          <h5>
+            your number one source for all plant types and other gardening tools
+            . We are dedicated to providing you the very best of plant
+            categories. We hope you enjoy our product as much as we enjoy
+            offering them to you.
+          </h5>
+          <button className="home_btn">Browse More</button>
+        </div>
+      </div>
+
       {data.map((result) => {
         return (
           <>
@@ -70,26 +89,7 @@ const Home = () => {
           </>
         );
       })}
-
-      {/* {data.map((result) => {
-        return (
-          <div class="card">
-            <img
-              src={"http://localhost:7000/" + result.image}
-              className="profileimage"
-            />{" "}
-            <div class="card-body">
-              <h5 class="card-title">{result.name}</h5>
-              <p class="card-text">{result.desc}</p>
-              <p class="card-text">Rs.{result.old_price}</p>
-              <p class="card-text">Rs.{result.new_price}</p>
-              <p class="card-text">{result.discount}%</p>
-              <p class="card-text">{result.stock}</p>
-              <p class="card-text">{result.quantity}</p>
-            </div>
-          </div>
-        );
-      })}{" "} */}
+      <OurTeams />
     </>
   );
 };
