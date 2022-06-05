@@ -17,17 +17,16 @@ const Login = () => {
     axios
       .post("http://localhost:7000/api/user/login", loginData)
       .then((result) => {
-        console.log(result);
         if (result.status === 200) {
           const token = result.data.token;
           localStorage.setItem("token", token);
-          alert("Login Success");
-          //   console.log(token);
-          // window.location.replace("/");
+          window.alert("Login Success");
+          console.log(token);
+          window.location.replace("/");
         }
       })
       .catch((err) => {
-        alert("Login Failed");
+        window.alert("Login Failed");
         console.log(err);
       });
   };

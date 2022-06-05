@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
 import axios from "axios";
 import Video from "../../videos/bg1.mp4";
@@ -7,8 +7,28 @@ import bg from "../../images/bg.jpg";
 import OurTeams from "./OurTeams";
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "./Product";
+import emailjs from "emailjs-com";
 
 const Home = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_4abkaml",
+      "template_8lz8jgl",
+      form.current,
+      "ZV-Evv-w2XWSFeipC"
+    );
+    e.target.reset().then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  };
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
@@ -41,7 +61,6 @@ const Home = () => {
         </div>
       </div>
 
-<<<<<<< HEAD
       <h1 className="container">Our Products</h1>
 
       <>
@@ -50,17 +69,6 @@ const Home = () => {
             <div class="row">
               {data.map((result) => {
                 return (
-=======
-      
-          <>
-            <div class="shell">
-            
-              <div class="container">
-              
-                <div class="row">
-                {data.map((result) => {
-        return (
->>>>>>> d609c9dff154b322a652caf31dded95f57cf6976
                   <div class="col-md-3">
                     <div class="wsk-cp-product">
                       <div class="wsk-cp-img">
@@ -99,26 +107,33 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-<<<<<<< HEAD
                 );
               })}
             </div>
           </div>
         </div>
-      </>
-
-=======
-                  );
-                })}
-                </div>
-                
-              </div>
-              
+        {/* newsletter */}
+        <div className="ns_container">
+          <div className="ns_section">
+            <div className="ns_content">
+              <h2>Subscribe to our NEWSLETTER</h2>
+              <p>
+                <form class="form-search" onSubmit={sendEmail} ref={form}>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email ..."
+                    required
+                  />
+                  <button type="submit">Search</button>
+                </form>
+              </p>
             </div>
-          </>
-        
->>>>>>> d609c9dff154b322a652caf31dded95f57cf6976
-      <OurTeams />
+          </div>
+        </div>
+      </>
+      {/* sandeep about us */}
+      {/* <OurTeams /> */}
     </>
   );
 };
