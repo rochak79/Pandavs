@@ -41,6 +41,7 @@ const Home = () => {
         </div>
       </div>
 
+<<<<<<< HEAD
       <h1 className="container">Our Products</h1>
 
       <>
@@ -49,6 +50,17 @@ const Home = () => {
             <div class="row">
               {data.map((result) => {
                 return (
+=======
+      
+          <>
+            <div class="shell">
+            
+              <div class="container">
+              
+                <div class="row">
+                {data.map((result) => {
+        return (
+>>>>>>> d609c9dff154b322a652caf31dded95f57cf6976
                   <div class="col-md-3">
                     <div class="wsk-cp-product">
                       <div class="wsk-cp-img">
@@ -87,6 +99,7 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
+<<<<<<< HEAD
                 );
               })}
             </div>
@@ -94,6 +107,17 @@ const Home = () => {
         </div>
       </>
 
+=======
+                  );
+                })}
+                </div>
+                
+              </div>
+              
+            </div>
+          </>
+        
+>>>>>>> d609c9dff154b322a652caf31dded95f57cf6976
       <OurTeams />
     </>
   );
