@@ -5,6 +5,8 @@ import Video from "../../videos/bg1.mp4";
 import splash from "../../images/splash.jpg";
 import bg from "../../images/bg.jpg";
 import OurTeams from "./OurTeams";
+import { Row, Col, Container } from "react-bootstrap";
+import Product from "./Product";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -39,12 +41,14 @@ const Home = () => {
         </div>
       </div>
 
-      {data.map((result) => {
-        return (
-          <>
-            <div class="shell">
-              <div class="container">
-                <div class="row">
+      <h1 className="container">Our Products</h1>
+
+      <>
+        <div class="shell">
+          <div class="container">
+            <div class="row">
+              {data.map((result) => {
+                return (
                   <div class="col-md-3">
                     <div class="wsk-cp-product">
                       <div class="wsk-cp-img">
@@ -83,12 +87,13 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
-          </>
-        );
-      })}
+          </div>
+        </div>
+      </>
+
       <OurTeams />
     </>
   );

@@ -6,6 +6,7 @@ const userRoutes = require("./routes/userRoutes");
 dotenv.config({ path: "./config/.env" });
 const productRoutes = require("./routes/productRoutes");
 const path = require("path");
+const contact = require("./routes/contactRoutes");
 
 const app = express();
 const port = process.env.PORT;
@@ -26,6 +27,7 @@ app.use(express.json());
 // Load routes
 app.use("/api/user", userRoutes);
 app.use("/api/product", productRoutes);
+app.use("/api/contact", contact);
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
