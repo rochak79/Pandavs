@@ -16,22 +16,21 @@ const Register = () => {
       name,
       email,
       password,
-      password_confirmation,
-      tc,
     };
 
     axios
-      .post("http://localhost:7000/api/user/register", registerData)
+      .post("http://localhost:7000/user/register", registerData)
       .then((result) => {
         console.log(result);
-        if (result.status === 200) {
+        if (result.status === 201) {
           console.log(result.data);
           window.alert("User Registered Successfully");
+          window.location.replace("/login");
         }
       })
-      .catch((err) => {
-        console.log(err);
-        window.alert("Registration Failed");
+      .catch((error) => {
+        const err = error.response.data.message;
+        window.alert(err);
       });
   };
   return (
@@ -62,20 +61,6 @@ const Register = () => {
                   placeholder="Create Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                ></input>
-                <input
-                  type="password"
-                  name=""
-                  placeholder="Confirm Password"
-                  value={password_confirmation}
-                  onChange={(e) => setPassword_confirmation(e.target.value)}
-                ></input>
-                <input
-                  type="email"
-                  name=""
-                  placeholder="Terms and Condition"
-                  value={tc}
-                  onChange={(e) => setTc(e.target.value)}
                 ></input>
 
                 <button className="loginbtn" type="submit" onClick={register}>

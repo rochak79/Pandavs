@@ -49,7 +49,6 @@ const Updateproduct = () => {
         window.alert("Product Updated!");
       })
       .catch((error) => {
-        // console.log(error);
         window.alert("Failed to Update product!");
       });
   };

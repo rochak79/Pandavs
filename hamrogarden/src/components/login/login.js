@@ -15,9 +15,10 @@ const Login = () => {
       password,
     };
     axios
-      .post("http://localhost:7000/api/user/login", loginData)
+      .post("http://localhost:7000/user/login", loginData)
       .then((result) => {
-        if (result.status === 200) {
+        if (result.status === 201) {
+          console.log(result);
           const token = result.data.token;
           localStorage.setItem("token", token);
           window.alert("Login Success");
@@ -25,9 +26,9 @@ const Login = () => {
           window.location.replace("/");
         }
       })
-      .catch((err) => {
-        window.alert("Login Failed");
-        console.log(err);
+      .catch((error) => {
+        const err = error.response.data.message;
+        window.alert(err);
       });
   };
 

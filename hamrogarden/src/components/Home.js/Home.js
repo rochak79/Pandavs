@@ -125,7 +125,7 @@ const Home = () => {
                     placeholder="Email ..."
                     required
                   />
-                  <button type="submit">Search</button>
+                  <button type="submit">Send</button>
                 </form>
               </p>
             </div>

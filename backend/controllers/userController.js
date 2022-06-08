@@ -69,28 +69,28 @@ class UserController {
             );
 
             res.send({
-              status: "success",
+              status: 200,
               message: "Login Success",
               token: token,
             });
           } else {
             res.send({
-              status: "failed",
+              status: 500,
               message: "Email or Password is not valid",
             });
           }
         } else {
           res.send({
-            status: "failed",
+            status: 500,
             message: "You are not a registered User",
           });
         }
       } else {
-        res.send({ status: "failed", message: "All fields are required" });
+        res.send({ status: 500, message: "All fields are required" });
       }
     } catch (error) {
       console.log(error);
-      res.send({ status: "failed", message: "Sorry, you can't login" });
+      res.send({ status: 500, message: "Sorry, you can't login" });
     }
   };
 
