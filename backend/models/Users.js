@@ -17,9 +17,15 @@ const userSchema = new mongoose.Schema({
     minlength: 5,
     maxlength: 1024,
   },
-  isAdmin: {
-    type: Boolean,
-    default: "false",
+  address: {
+    type: String,
+    minlength: 5,
+    maxlength: 1024,
+  },
+  number: {
+    type: Number,
+    unique: true,
+    maxlength: 10,
   },
   // role: {
   //   type: String,

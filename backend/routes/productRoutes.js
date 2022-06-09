@@ -94,6 +94,29 @@ router.route("/:id").delete(deleteProduct);
 router.route("/:id").get(getProductDetails);
 
 // update product
-router.route("/:id").put(updateProduct);
+router.route("/:id").put(upload.single("image"), async (req, res) => {
+  let product = await Products.findById(req.params.id);
+  if (!product) {
+    return res.status(404).json({
+      success: false,
+      message: "Product not found",
+    });
+  }
+  productUpdated = await Products.findByIdAndUpdate(req.params.id, {
+    name: req.body.name,
+    new_price: req.body.new_price,
+    old_price: req.body.old_price,
+    quantity: req.body.quantity,
+    desc: req.body.desc,
+    // image: req.file.filename,
+    stock: req.body.stock,
+    discount: req.body.discount,
+  });
+
+  res.status(200).json({
+    success: true,
+    productUpdated,
+  });
+});
 
 module.exports = router;

@@ -5,15 +5,35 @@ const bcryptjs = require("bcryptjs");
 
 // Register a user
 exports.registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, address, number } = req.body;
   const user = await User.findOne({ email: email });
+  const phone = await User.findOne({ number: number });
+  const ndigit = number.length;
   if (user) {
     res.status(400).json({
       success: false,
       message: "Email already exists!",
     });
-  } else {
-    if (name && email && password) {
+  } else if (phone) {
+    res.status(400).json({
+      success: false,
+      message: "Phone already exists!",
+    });
+  }
+  // else if (ndigit != 10) {
+  //   res.status(400).json({
+  //     success: false,
+  //     message: "Phone number must be of 10 digits!",
+  //   });
+  // }
+  //  else if (ndigit < 0) {
+  //   res.status(400).json({
+  //     success: false,
+  //     message: "Phone number can't be negative!",
+  //   });
+  // }
+  else {
+    if (name && email && password && address && number) {
       try {
         const salt = await bcryptjs.genSalt(10);
         const hashPassword = await bcryptjs.hash(password, salt);
@@ -21,6 +41,8 @@ exports.registerUser = async (req, res) => {
           name: name,
           email: email,
           password: hashPassword,
+          address: address,
+          number: number,
         });
         await doc.save();
 

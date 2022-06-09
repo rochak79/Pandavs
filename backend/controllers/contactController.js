@@ -8,6 +8,7 @@ exports.createContact = async (req, res) => {
     res.status(201).json({
       success: true,
       message: "Admin contacted successfully!",
+      contact,
     });
   } catch (error) {
     res.status(500).json({

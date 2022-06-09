@@ -71,7 +71,7 @@ const Login = () => {
                 />
 
                 <button className="loginbtn" type="submit" onClick={login}>
-                  Login as User
+                  Login
                 </button>
                 <p class="signup">
                   {" "}

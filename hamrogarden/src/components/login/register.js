@@ -11,6 +11,8 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
+  const [number, setNumber] = useState("");
 
   const registerData = (e) => {
     e.preventDefault();
@@ -19,22 +21,46 @@ const Register = () => {
       name,
       email,
       password,
+      address,
+      number,
     };
+    if (number != 0) {
+      window.alert("Phone Number must have 10 digits!");
+    } else {
+      axios
+        .post(`http://localhost:7000/user/register`, register)
+        .then((result) => {
+          console.log(result);
+          if (result.status === 201) {
+            console.log(result.data);
+            window.alert("User Registered Successfully");
+            window.location.replace("/login");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          window.alert("Login Failed");
+        });
+    }
 
-    axios
-      .post(`http://localhost:7000/user/register`, register)
-      .then((result) => {
-        console.log(result);
-        if (result.status === 201) {
-          console.log(result.data);
-          window.alert("User Registered Successfully");
-          window.location.replace("/login");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        window.alert("Login Failed");
-      });
+    if (number > 0) {
+      axios
+        .post(`http://localhost:7000/user/register`, register)
+        .then((result) => {
+          console.log(result);
+          if (result.status === 201) {
+            console.log(result.data);
+            window.alert("User Registered Successfully");
+            window.location.replace("/login");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          window.alert("Login Failed");
+        });
+    } else {
+      window.alert("Phone Number can't be negative!");
+    }
   };
 
   return (
@@ -51,7 +77,7 @@ const Register = () => {
                   <Form.Label>Username</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="username"
+                    placeholder="Username"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -77,6 +103,30 @@ const Register = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlTextarea1"
+                >
+                  <Form.Label>Address</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Address"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlTextarea1"
+                >
+                  <Form.Label>Phone Number</Form.Label>
+                  <Form.Control
+                    type="number"
+                    placeholder="Phone Number"
+                    value={number}
+                    onChange={(e) => setNumber(e.target.value)}
+                  />
+                </Form.Group>
 
                 <Button type="submit" onClick={registerData}>
                   Submit

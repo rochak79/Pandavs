@@ -59,10 +59,21 @@ exports.updateProduct = async (req, res, next) => {
       message: "Product not found",
     });
   }
-  productUpdated = await Products.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true,
-    useFindAndModify: false,
+  // productUpdated = await Products.findByIdAndUpdate(req.params.id, req.body, {
+  //   new: true,
+  //   runValidators: true,
+  //   useFindAndModify: false,
+  // });
+
+  productUpdated = await Products.findByIdAndUpdate(req.params.id, {
+    name: req.body.name,
+    new_price: req.body.new_price,
+    old_price: req.body.old_price,
+    quantity: req.body.quantity,
+    desc: req.body.desc,
+    image: req.file.filename,
+    stock: req.body.stock,
+    discount: req.body.discount,
   });
 
   res.status(200).json({

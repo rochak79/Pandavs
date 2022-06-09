@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Contact from "./Contact/Contact";
-import Home from "./Home.js/Home";
-import OurTeams from "./Home.js/OurTeams";
+import Home from "./Home/Home";
+import OurTeams from "./Home/OurTeams";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
 import Profile from "./Profile/Profile";
