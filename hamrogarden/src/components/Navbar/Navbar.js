@@ -10,7 +10,9 @@ const Navbar = () => {
   };
   // token
   const token = localStorage.getItem("token");
-  console.log(token);
+  // console.log(token);
+
+  // name
 
   if (token) {
     return (
@@ -127,6 +129,7 @@ const Navbar = () => {
                     Logout
                   </Link>
                 </li>
+                <li class="nav-item"></li>
               </ul>
             </div>
           </div>
@@ -246,6 +249,11 @@ const Navbar = () => {
                 <li class="nav-item">
                   <Link to="login" class="nav-link">
                     Login
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link to="login" class="nav-link">
+                    <i class="fa fa-user" aria-hidden="true"></i>s
                   </Link>
                 </li>
               </ul>

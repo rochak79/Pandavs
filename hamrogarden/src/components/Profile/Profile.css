@@ -1,0 +1,16 @@
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.profile > * {
+  flex-basis: 100%;
+}
+
+.profile_left {
+  background: red;
+}
+.profile_right {
+  background: green;
+}

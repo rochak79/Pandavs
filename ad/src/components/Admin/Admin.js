@@ -31,6 +31,9 @@ const Admin = () => {
           <li>
             <Link to="">Payment Dashboard</Link>
           </li>
+          <li>
+            <Link to="">Add Blogs</Link>
+          </li>
         </ul>
       </div>
       <section>

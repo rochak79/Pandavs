@@ -5,6 +5,7 @@ import Home from "./Home.js/Home";
 import OurTeams from "./Home.js/OurTeams";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
+import Profile from "./Profile/Profile";
 import PrivateRoute from "./ProtectedRoutes";
 
 const Body = () => {
@@ -15,6 +16,7 @@ const Body = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/ourteam" element={<OurTeams />} />
+        <Route path="/profile" element={<Profile />} />
         <Route
           path="/contact"
           element={

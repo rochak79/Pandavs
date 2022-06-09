@@ -5,7 +5,7 @@ const bcryptjs = require("bcryptjs");
 
 // Register a user
 exports.registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, role } = req.body;
   const user = await User.findOne({ email: email });
   if (user) {
     res.status(400).json({
@@ -13,7 +13,7 @@ exports.registerUser = async (req, res) => {
       message: "Email already exists!",
     });
   } else {
-    if (name && email && password) {
+    if (name && email && password && role) {
       try {
         const salt = await bcryptjs.genSalt(10);
         const hashPassword = await bcryptjs.hash(password, salt);
@@ -21,6 +21,7 @@ exports.registerUser = async (req, res) => {
           name: name,
           email: email,
           password: hashPassword,
+          role: role,
         });
         await doc.save();
 
@@ -62,15 +63,11 @@ exports.loginUser = async (req, res) => {
             { expiresIn: "5d" }
           );
 
-          // res.send({
-          //   status: 200,
-          //   message: "Login Success",
-          //   token: token,
-          // });
           res.status(201).json({
             success: true,
             message: "Logged in successfully!",
             token,
+            user,
           });
         } else {
           res.status(500).json({

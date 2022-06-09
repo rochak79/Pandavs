@@ -35,10 +35,12 @@ const AddProduct = () => {
       .then((result) => {
         console.log(result);
         window.alert("Product Added!");
+        window.location.replace("/productdashboard");
       })
       .catch((error) => {
-        // console.log(error);
-        window.alert("Failed to add product!");
+        const err = error.response.data.message;
+        console.log(err);
+        window.alert(err);
       });
   };
   return (

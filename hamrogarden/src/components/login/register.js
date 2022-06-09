@@ -1,25 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import axios from "axios";
+import Select from "react-select";
+import { Form, Button } from "react-bootstrap";
+import { Grid, TextField, MenuItem } from "@mui/material/node";
+import { color } from "@mui/system";
 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [password_confirmation, setPassword_confirmation] = useState("");
-  const [tc, setTc] = useState("");
+  const [role, setRole] = useState("");
 
-  const register = (e) => {
+  const options = [
+    { value: "Admin", label: "Admin" },
+    { value: "User", label: "User" },
+    { value: "Null", label: "Null" },
+  ];
+
+  const onChangeRole = (e) => {
+    const role = e.target.value;
+    setRole(role);
+  };
+
+  const registerData = (e) => {
     e.preventDefault();
-    const registerData = {
+
+    const register = {
       name,
       email,
       password,
+      role,
     };
 
     axios
-      .post("http://localhost:7000/user/register", registerData)
+      .post(`http://localhost:7000/user/register`, register)
       .then((result) => {
         console.log(result);
         if (result.status === 201) {
@@ -28,53 +44,94 @@ const Register = () => {
           window.location.replace("/login");
         }
       })
-      .catch((error) => {
-        const err = error.response.data.message;
-        window.alert(err);
+      .catch((err) => {
+        console.log(err);
+        window.alert("Login Failed");
       });
   };
+
   return (
     <div>
       <section className="section">
         <div className="container">
           <div className="user singinBx">
             <div className="formBx">
-              <form>
-                <h2>Register your account</h2>
-                <input
-                  type="text"
-                  name=""
-                  placeholder="Username"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                ></input>
-                <input
-                  type="email"
-                  name=""
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                ></input>
-                <input
+              <Form>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlTextarea1"
+                >
+                  <Form.Label>Username</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="username"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group
+                  className="mb-3"
+                  controlId="exampleForm.ControlInput1"
+                >
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="name@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Label htmlFor="inputPassword5">Password</Form.Label>
+                <Form.Control
                   type="password"
-                  name=""
-                  placeholder="Create Password"
+                  id="inputPassword5"
+                  aria-describedby="passwordHelpBlock"
+                  placeholder="********"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                ></input>
-
-                <button className="loginbtn" type="submit" onClick={register}>
-                  Register
-                </button>
+                />
+                <Grid item xs={6}>
+                  <TextField
+                    margin="normal"
+                    required
+                    select
+                    fullWidth
+                    name="role"
+                    label="Role"
+                    id="role"
+                    value={color.label}
+                    onChange={setRole}
+                    // error={formik.touched.color && Boolean(formik.errors.color)}
+                    // helperText={formik.touched.color && formik.errors.color}
+                    autoComplete="current-color"
+                  >
+                    {options.map((option) => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                </Grid>
+                {/* <Form.Select onChange={setRole}>
+                  <option value="Admin">Admin</option>
+                  <option value="User">User</option>
+                  <option value="Null">Null</option>
+                </Form.Select> */}
+                <Button type="submit" onClick={registerData}>
+                  Submit
+                </Button>
                 <p class="signup">
                   {" "}
                   Already have an account?
                   <Link to="/login">Login</Link>
                 </p>
-              </form>
+              </Form>
             </div>
             <div class="imgBx">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2xyA1UXB9IMvrfdTqLF8q_dA4bEeXqo3LSBSod2jR36rcv2-bAyoJ6iWc0fwMJhYHlU&usqp=CAU"></img>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2xyA1UXB9IMvrfdTqLF8q_dA4bEeXqo3LSBSod2jR36rcv2-bAyoJ6iWc0fwMJhYHlU&usqp=CAU"
+                alt="Login"
+              ></img>
             </div>
           </div>
         </div>

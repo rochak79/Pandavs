@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import loginsvg from "../../images/login.jpg";
+import loginsvg from "../../images/l.webp";
 
 const Login = () => {
+  // const dataa = localStorage.getItem("userData");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,9 +22,21 @@ const Login = () => {
           console.log(result);
           const token = result.data.token;
           localStorage.setItem("token", token);
+
           window.alert("Login Success");
           console.log(token);
-          window.location.replace("/");
+
+          // user
+          const userData = result.data.user;
+          localStorage.setItem("userData", userData);
+          // console.log(userData);
+          // console.log(
+          //   "User:",
+          //   result.data.user.name,
+          //   result.data.user.email,
+          //   result.data.user.password
+          // );
+          // window.location.replace("/");
         }
       })
       .catch((error) => {
@@ -38,7 +51,7 @@ const Login = () => {
         <div className="container">
           <div className="user singinBx">
             <div class="imgBx">
-              <img src={loginsvg} className="loginsvg"></img>
+              <img src={loginsvg} className="loginsvg" alt="Login Image"></img>
             </div>
             <div className="formBx">
               <form>
