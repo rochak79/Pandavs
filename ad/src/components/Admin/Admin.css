@@ -121,6 +121,18 @@ section {
   height: 100vh;
   transition: all 0.5s ease;
 }
+.fs_div {
+  margin-left: 10px;
+  cursor: pointer !important;
+  background: #063146;
+  color: white;
+  border: none;
+}
+
+.login_fs {
+  color: white !important;
+}
+
 @media only screen and (max-width: 948px) {
   .sidebar {
     left: -250px;

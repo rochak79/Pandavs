@@ -46,44 +46,22 @@ exports.registerUser = async (req, res) => {
     }
   }
 };
+
+// login
 exports.loginUser = async (req, res) => {
   try {
-    const { email, password, isAdmin } = req.body;
+    const { email, password } = req.body;
     if (email && password) {
       const user = await User.findOne({ email: email });
-      const check = await User.findOne({ isAdmin: isAdmin });
-      if (user != null && check != null) {
+      if (user != null) {
         const isMatch = await bcryptjs.compare(password, user.password);
-        if (user.email === email && check.isAdmin && isMatch) {
+        if (user.email === email && isMatch) {
           // Generate JWT Token
           const token = jwt.sign(
             { userID: user._id },
             process.env.JWT_SECRET_KEY,
             { expiresIn: "5d" }
           );
-
-          if (!check.isAdmin) {
-            console.log(check.isAdmin);
-            res.status(400).json({
-              success: false,
-              message: "You're not an Admin!",
-            });
-          } else {
-            console.log(`You're:`, check.isAdmin);
-            res.status(201).json({
-              success: true,
-              message: "Logged in successfully!",
-              token,
-              user,
-            });
-          }
-        } else if (check.isAdmin === false) {
-          res.status(400).json({
-            success: false,
-            message: "You're not an Admin!",
-          });
-        } else if (check.isAdmin === true) {
-          console.log(`You're:`, check.isAdmin);
           res.status(201).json({
             success: true,
             message: "Logged in successfully!",
@@ -97,14 +75,12 @@ exports.loginUser = async (req, res) => {
           });
         }
       } else {
-        console.log(isAdmin);
         res.status(400).json({
           success: false,
           message: "You are not a registered User!",
         });
       }
     } else {
-      console.log(isAdmin);
       res.status(400).json({
         success: false,
         message: "All fields are required!",
@@ -117,4 +93,42 @@ exports.loginUser = async (req, res) => {
       message: "Sorry, you can't login!",
     });
   }
+};
+// get all users
+exports.getAllUsers = async (req, res) => {
+  try {
+    const user = await User.find();
+    if (user) {
+      res.status(200).json({
+        success: true,
+        user,
+      });
+    } else {
+      res.status(400).json({
+        success: false,
+        message: "Unable to Find users!",
+      });
+    }
+  } catch (error) {
+    res.send(500).json({
+      success: false,
+      message: "Server incontoured an error!",
+    });
+  }
+};
+
+// get a user
+exports.getUserDetails = async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    res.status({
+      success: false,
+      message: "User not found!",
+    });
+  }
+  res.status(200).json({
+    success: true,
+    user,
+  });
 };

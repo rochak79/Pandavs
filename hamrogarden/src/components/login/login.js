@@ -38,6 +38,7 @@ const Login = () => {
         }
       })
       .catch((error) => {
+        console.log(error);
         const err = error.response.data.message;
         window.alert(err);
       });
