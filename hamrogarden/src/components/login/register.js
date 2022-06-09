@@ -11,18 +11,6 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
-
-  const options = [
-    { value: "Admin", label: "Admin" },
-    { value: "User", label: "User" },
-    { value: "Null", label: "Null" },
-  ];
-
-  const onChangeRole = (e) => {
-    const role = e.target.value;
-    setRole(role);
-  };
 
   const registerData = (e) => {
     e.preventDefault();
@@ -31,7 +19,6 @@ const Register = () => {
       name,
       email,
       password,
-      role,
     };
 
     axios
@@ -90,33 +77,7 @@ const Register = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <Grid item xs={6}>
-                  <TextField
-                    margin="normal"
-                    required
-                    select
-                    fullWidth
-                    name="role"
-                    label="Role"
-                    id="role"
-                    value={color.label}
-                    onChange={setRole}
-                    // error={formik.touched.color && Boolean(formik.errors.color)}
-                    // helperText={formik.touched.color && formik.errors.color}
-                    autoComplete="current-color"
-                  >
-                    {options.map((option) => (
-                      <MenuItem key={option.value} value={option.value}>
-                        {option.label}
-                      </MenuItem>
-                    ))}
-                  </TextField>
-                </Grid>
-                {/* <Form.Select onChange={setRole}>
-                  <option value="Admin">Admin</option>
-                  <option value="User">User</option>
-                  <option value="Null">Null</option>
-                </Form.Select> */}
+
                 <Button type="submit" onClick={registerData}>
                   Submit
                 </Button>

@@ -5,6 +5,7 @@ import AddProducts from "./ProductDashboard/AddProduct";
 import DisplayProducts from "./ProductDashboard/DisplayProducts";
 import DisplayContact from "./ContactDashboard/DisplayContact";
 import Update from "./ProductDashboard/UpdateProduct";
+import Login from "./Registration/Login";
 
 const Mid = () => {
   return (
@@ -15,6 +16,7 @@ const Mid = () => {
         <Route path="/displayproducts" element={<DisplayProducts />} />
         <Route path="/displaycontact" element={<DisplayContact />} />
         <Route path="/updateproduct/:id" element={<Update />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );

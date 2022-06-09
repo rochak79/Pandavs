@@ -19,12 +19,10 @@ const Login = () => {
       .post("http://localhost:7000/user/login", loginData)
       .then((result) => {
         if (result.status === 201) {
-          console.log(result);
           const token = result.data.token;
           localStorage.setItem("token", token);
 
           window.alert("Login Success");
-          console.log(token);
 
           // user
           const userData = result.data.user;
@@ -36,7 +34,7 @@ const Login = () => {
           //   result.data.user.email,
           //   result.data.user.password
           // );
-          // window.location.replace("/");
+          window.location.replace("/");
         }
       })
       .catch((error) => {
@@ -72,7 +70,7 @@ const Login = () => {
                 />
 
                 <button className="loginbtn" type="submit" onClick={login}>
-                  Login
+                  Login as User
                 </button>
                 <p class="signup">
                   {" "}
