@@ -232,7 +232,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <Link to="#" class="nav-link">
+                  <Link to="about" class="nav-link">
                     About
                   </Link>
                 </li>
@@ -249,11 +249,6 @@ const Navbar = () => {
                 <li class="nav-item">
                   <Link to="login" class="nav-link">
                     Login
-                  </Link>
-                </li>
-                <li class="nav-item">
-                  <Link to="login" class="nav-link">
-                    <i class="fa fa-user" aria-hidden="true"></i>s
                   </Link>
                 </li>
               </ul>

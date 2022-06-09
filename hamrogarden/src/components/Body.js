@@ -7,6 +7,7 @@ import Login from "./Login/Login";
 import Register from "./Login/Register";
 import Profile from "./Profile/Profile";
 import PrivateRoute from "./ProtectedRoutes";
+import About from "../components/About/AboutUs";
 
 const Body = () => {
   return (
@@ -17,6 +18,7 @@ const Body = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/ourteam" element={<OurTeams />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/about" element={<About />} />
         <Route
           path="/contact"
           element={

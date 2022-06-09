@@ -22,9 +22,14 @@ const Login = () => {
         console.log(result);
         const adminToken = result.data.token;
         localStorage.setItem("adminToken", adminToken);
-        window.location.replace("/");
+        // window.location.replace("/");
 
         window.alert("Hello Admin!");
+
+        // admin info
+        const adminInfo = result.data.admin.name;
+        console.log(adminInfo);
+        localStorage.setItem("adminInfo", adminInfo);
       })
       .catch((err) => {
         const error = err.response.data.message;

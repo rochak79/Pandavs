@@ -7,6 +7,7 @@ import DisplayContact from "./ContactDashboard/DisplayContact";
 import Update from "./ProductDashboard/UpdateProduct";
 import Login from "./Registration/Login";
 import PrivateRoute from "./ProtectedRoutes";
+import UserDashboard from "./UserDashboard/UserDashboard";
 
 const Mid = () => {
   return (
@@ -49,6 +50,14 @@ const Mid = () => {
           element={
             <PrivateRoute>
               <Update />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/userdashboard"
+          element={
+            <PrivateRoute>
+              <UserDashboard />
             </PrivateRoute>
           }
         />

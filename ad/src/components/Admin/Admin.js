@@ -9,7 +9,8 @@ const Admin = () => {
     window.location.replace("/");
   };
 
-  const token = localStorage.getItem("adminToken");
+  const token = localStorage.getItem("adminInfo");
+  console.log(token);
 
   if (token) {
     return (
@@ -23,7 +24,7 @@ const Admin = () => {
         <div className="textt">HAMRO GARDEN</div>
         <div className="sidebar">
           <header>
-            HI Admin. &nbsp;
+            HI {token} &nbsp;
             <button className="fs_div">
               <i
                 class="fa fa-sign-out"
@@ -40,7 +41,7 @@ const Admin = () => {
               <Link to="productdashboard">Product Dashboard</Link>
             </li>
             <li>
-              <Link to="">User Dashboard</Link>
+              <Link to="userdashboard">User Dashboard</Link>
             </li>
             <li>
               <Link to="displaycontact">Contact Dashboard</Link>
@@ -85,7 +86,7 @@ const Admin = () => {
               <Link to="productdashboard">Product Dashboard</Link>
             </li>
             <li>
-              <Link to="">User Dashboard</Link>
+              <Link to="userdashboard">User Dashboard</Link>
             </li>
             <li>
               <Link to="displaycontact">Contact Dashboard</Link>
