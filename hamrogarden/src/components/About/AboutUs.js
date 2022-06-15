@@ -4,7 +4,7 @@ import hanC from "../../images/hanC.jpg";
 import gar from "../../images/gar.jpg";
 import pot from "../../images/pot.png";
 import rohan from "../../images/rohan.jpg";
-import manoj from "../../images/manoj.jpg";
+import manoj from "../../images/m.jpg";
 import rochak from "../../images/rochak.jpg";
 import sandeep from "../../images/sandeep.jpg";
 import me from "../../images/me.jpg";

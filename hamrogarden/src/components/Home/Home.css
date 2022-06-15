@@ -233,6 +233,9 @@ a.buy-btn:focus {
   display: inline-block;
   margin: 0 5px;
 }
+.btn-learnmore {
+  margin-right: 10px !important;
+}
 @media screen and (max-width: 991px) {
   .home_top {
     display: flex;
@@ -338,4 +341,7 @@ a.buy-btn:focus {
   left: 20px;
   font-size: 16px;
   color: #80a3bd;
+}
+.card-img {
+  height: 250px;
 }

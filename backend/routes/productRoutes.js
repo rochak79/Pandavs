@@ -10,14 +10,12 @@ const Products = require("../models/Product");
 
 // Add product
 router.post("/addproduct", upload.single("image"), async (req, res) => {
-  const { name, old_price, new_price, quantity, desc, image, stock, discount } =
-    req.body;
+  const { name, old_price, new_price, desc, image, stock, discount } = req.body;
   const dis = discount;
   const dl = dis.length;
   const nprice = new_price;
   const oprice = old_price;
   const sto = stock;
-  const quan = quantity;
 
   // price validation
   if (nprice < 0 || oprice < 0) {
@@ -51,18 +49,12 @@ router.post("/addproduct", upload.single("image"), async (req, res) => {
       success: false,
       message: "Stock can't be negative!",
     });
-  } else if (quan < 0) {
-    res.status(400).json({
-      success: false,
-      message: "Quantity can't be negative!",
-    });
   } else {
     try {
       let product = new Products({
         name: req.body.name,
         new_price: req.body.new_price,
         old_price: req.body.old_price,
-        quantity: req.body.quantity,
         desc: req.body.desc,
         image: req.file.filename,
         stock: req.body.stock,
@@ -106,7 +98,6 @@ router.route("/:id").put(upload.single("image"), async (req, res) => {
     name: req.body.name,
     new_price: req.body.new_price,
     old_price: req.body.old_price,
-    quantity: req.body.quantity,
     desc: req.body.desc,
     // image: req.file.filename,
     stock: req.body.stock,

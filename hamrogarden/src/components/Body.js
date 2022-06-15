@@ -8,6 +8,7 @@ import Register from "./Login/Register";
 import Profile from "./Profile/Profile";
 import PrivateRoute from "./ProtectedRoutes";
 import About from "../components/About/AboutUs";
+import ProductDetail from "./Home/ProductDetail";
 
 const Body = () => {
   return (
@@ -24,6 +25,14 @@ const Body = () => {
           element={
             <PrivateRoute>
               <Contact />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/product/:id"
+          element={
+            <PrivateRoute>
+              <ProductDetail />
             </PrivateRoute>
           }
         />

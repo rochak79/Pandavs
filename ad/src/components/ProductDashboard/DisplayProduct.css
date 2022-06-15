@@ -57,6 +57,11 @@
 .b_data {
   color: black !important;
 }
+.strike-text {
+  text-decoration: line-through !important;
+}
+.pdimg {
+}
 @media only screen and (max-width: 991.98px) {
   .heading {
     background: none !important;

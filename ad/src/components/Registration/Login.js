@@ -22,7 +22,7 @@ const Login = () => {
         console.log(result);
         const adminToken = result.data.token;
         localStorage.setItem("adminToken", adminToken);
-        // window.location.replace("/");
+        window.location.replace("/");
 
         window.alert("Hello Admin!");
 

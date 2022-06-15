@@ -8,6 +8,7 @@ const path = require("path");
 const contact = require("./routes/contactRoutes");
 const users = require("./routes/usersRoutes");
 const admin = require("./routes/adminRoutes");
+const blog = require("./routes/blogRoutes");
 
 const app = express();
 const port = process.env.PORT;
@@ -30,6 +31,7 @@ app.use("/api/product", productRoutes);
 app.use("/api/contact", contact);
 app.use("/user", users);
 app.use("/admin", admin);
+app.use("/blog", blog);
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);

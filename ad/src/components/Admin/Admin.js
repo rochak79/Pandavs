@@ -24,7 +24,7 @@ const Admin = () => {
         <div className="textt">HAMRO GARDEN</div>
         <div className="sidebar">
           <header>
-            HI {token} &nbsp;
+            Hi, {token} &nbsp;
             <button className="fs_div">
               <i
                 class="fa fa-sign-out"
@@ -52,6 +52,12 @@ const Admin = () => {
             <li>
               <Link to="">Add Blogs</Link>
             </li>
+            <li>
+              <Link to="" onClick={logout}>
+                Logout &nbsp; &nbsp;{" "}
+                <i class="fa fa-sign-out" aria-hidden="true logout_fs"></i>
+              </Link>
+            </li>
           </ul>
         </div>
         <section>
@@ -71,7 +77,7 @@ const Admin = () => {
         <div className="textt">HAMRO GARDEN</div>
         <div className="sidebar">
           <header>
-            HI Admin. &nbsp;
+            Hi, Admin. &nbsp;
             <button className="fs_div">
               <Link to="/login">
                 <i class="fa fa-sign-in login_fs" aria-hidden="true"></i>
@@ -96,6 +102,12 @@ const Admin = () => {
             </li>
             <li>
               <Link to="">Add Blogs</Link>
+            </li>
+            <li>
+              <Link to="/login">
+                Login &nbsp; &nbsp;{" "}
+                <i class="fa fa-sign-out" aria-hidden="true logout_fs"></i>
+              </Link>
             </li>
           </ul>
         </div>

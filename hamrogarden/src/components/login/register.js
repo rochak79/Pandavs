@@ -6,6 +6,7 @@ import Select from "react-select";
 import { Form, Button } from "react-bootstrap";
 import { Grid, TextField, MenuItem } from "@mui/material/node";
 import { color } from "@mui/system";
+import register from "../../images/Wavy_Tech-28_Single-10.jpg";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -101,10 +102,7 @@ const Register = () => {
               </Form>
             </div>
             <div class="imgBx">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj2xyA1UXB9IMvrfdTqLF8q_dA4bEeXqo3LSBSod2jR36rcv2-bAyoJ6iWc0fwMJhYHlU&usqp=CAU"
-                alt="Login"
-              ></img>
+              <img src={register} alt="Login"></img>
             </div>
           </div>
         </div>

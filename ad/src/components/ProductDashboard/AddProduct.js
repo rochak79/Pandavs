@@ -7,7 +7,6 @@ const AddProduct = () => {
   const [name, setName] = useState("");
   const [old_price, setOprice] = useState("");
   const [new_price, setNprice] = useState("");
-  const [quantity, setQuantity] = useState("");
   const [desc, setDesc] = useState("");
   const [image, setImage] = useState("");
   const [stock, setStock] = useState("");
@@ -20,7 +19,6 @@ const AddProduct = () => {
       name,
       old_price,
       new_price,
-      quantity,
       desc,
       image,
       stock,
@@ -71,13 +69,6 @@ const AddProduct = () => {
                   placeholder="New Price"
                   value={new_price}
                   onChange={(e) => setNprice(e.target.value)}
-                />
-                <input
-                  type="number"
-                  name=""
-                  placeholder="Quantity"
-                  value={quantity}
-                  onChange={(e) => setQuantity(e.target.value)}
                 />
                 <textarea
                   rows="4"

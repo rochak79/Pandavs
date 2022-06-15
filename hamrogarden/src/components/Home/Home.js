@@ -1,13 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
 import axios from "axios";
-import Video from "../../videos/bg1.mp4";
-import splash from "../../images/splash.jpg";
-import bg from "../../images/bg.jpg";
-import OurTeams from "./OurTeams";
-import { Row, Col, Container } from "react-bootstrap";
-import Product from "./Product";
 import emailjs from "emailjs-com";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const form = useRef();
@@ -69,39 +64,38 @@ const Home = () => {
             <div class="row">
               {data.map((result) => {
                 return (
-                  <div class="col-md-3">
-                    <div class="wsk-cp-product">
-                      <div class="wsk-cp-img">
-                        <img
-                          src={"http://localhost:7000/" + result.image}
-                          alt={result.name}
-                          class="img-responsive"
-                        />
-                      </div>
-                      <div class="wsk-cp-text">
-                        <div class="category">
-                          <span>{result.discount}% OFF</span>
-                        </div>
-                        <div class="title-product">
-                          <h3>{result.name}</h3>
-                        </div>
-                        <div class="description-prod">
-                          <p>{result.desc}</p>
-                        </div>
-                        <div class="card-footer">
-                          <div class="wcf-left">
-                            <span class="price">
+                  <div className="col-12 col-sm-8 col-md-6 col-lg-4">
+                    <div className="bg-light card">
+                      <img
+                        className="card-img"
+                        src={"http://localhost:7000/" + result.image}
+                        alt="Image"
+                      />
+                      <div className="card-body">
+                        <h4 className="card-title">{result.name}</h4>
+                        <p className="card-text">{result.desc}</p>
+                        <div className="buy d-flex justify-content-between align-items-center">
+                          <div>
+                            <h5 className="mt-4">
+                              {" "}
                               <strike>
-                                <small>Rs:{result.old_price}</small>
+                                <small className="text-danger">
+                                  Rs:{result.old_price}
+                                </small>
                               </strike>{" "}
-                              &nbsp;
-                            </span>
-                            <span class="price">Rs:{result.new_price}</span>
+                              <div className="text-success">
+                                Rs:
+                                {result.new_price}
+                              </div>
+                            </h5>
                           </div>
-                          <div class="wcf-right">
-                            <a href="#" class="buy-btn">
-                              Add to Cart
-                            </a>
+                          <div className="">
+                            <Link
+                              to={"/product/" + result._id}
+                              className="btn-learnmore btn btn-success mt-3 "
+                            >
+                              Learn More
+                            </Link>
                           </div>
                         </div>
                       </div>
