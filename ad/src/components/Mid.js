@@ -8,6 +8,9 @@ import Update from "./ProductDashboard/UpdateProduct";
 import Login from "./Registration/Login";
 import PrivateRoute from "./ProtectedRoutes";
 import UserDashboard from "./UserDashboard/UserDashboard";
+import BlogDashboard from "./Blog/BlogDashboard";
+import AddBlog from "./Blog/AddBlog";
+import DisplayBlog from "./Blog/DisplayBlog";
 
 const Mid = () => {
   return (
@@ -58,6 +61,30 @@ const Mid = () => {
           element={
             <PrivateRoute>
               <UserDashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/blogdashboard"
+          element={
+            <PrivateRoute>
+              <BlogDashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/addblog"
+          element={
+            <PrivateRoute>
+              <AddBlog />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/displayblog"
+          element={
+            <PrivateRoute>
+              <DisplayBlog />
             </PrivateRoute>
           }
         />

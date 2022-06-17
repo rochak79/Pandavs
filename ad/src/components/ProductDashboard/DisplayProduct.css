@@ -61,6 +61,8 @@
   text-decoration: line-through !important;
 }
 .pdimg {
+  height: 30% !important;
+  width: 100%;
 }
 @media only screen and (max-width: 991.98px) {
   .heading {

@@ -59,11 +59,6 @@ exports.updateProduct = async (req, res, next) => {
       message: "Product not found",
     });
   }
-  // productUpdated = await Products.findByIdAndUpdate(req.params.id, req.body, {
-  //   new: true,
-  //   runValidators: true,
-  //   useFindAndModify: false,
-  // });
 
   productUpdated = await Products.findByIdAndUpdate(req.params.id, {
     name: req.body.name,

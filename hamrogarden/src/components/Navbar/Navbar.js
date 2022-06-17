@@ -115,7 +115,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <Link to="#" class="nav-link">
+                  <Link to="blog" class="nav-link">
                     Blog
                   </Link>
                 </li>
@@ -237,7 +237,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <Link to="#" class="nav-link">
+                  <Link to="blog" class="nav-link">
                     Blog
                   </Link>
                 </li>

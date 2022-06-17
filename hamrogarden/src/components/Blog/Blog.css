@@ -1,0 +1,32 @@
+.blog-container {
+  margin-top: 50px;
+}
+.blog-main {
+  color: #b78b08 !important;
+}
+.blog-card {
+  margin-top: 30px;
+  margin-bottom: 10%;
+}
+.blog-body {
+  margin-bottom: 60px;
+  height: 310px !important;
+  overflow-y: hidden;
+  line-height: 1.6;
+  text-align: justify;
+}
+.blog-read {
+  margin-right: 10px !important;
+  background: #b78b08;
+  border: none;
+}
+.blog-read:hover {
+  background: #a47d07;
+  transition: all 250ms ease-in-out;
+}
+.blog-title {
+  font-weight: 500;
+}
+.blog-date {
+  color: #8b4513 !important;
+}

@@ -50,7 +50,7 @@ const Admin = () => {
               <Link to="">Payment Dashboard</Link>
             </li>
             <li>
-              <Link to="">Add Blogs</Link>
+              <Link to="blogdashboard">Blogs</Link>
             </li>
             <li>
               <Link to="" onClick={logout}>
@@ -101,7 +101,7 @@ const Admin = () => {
               <Link to="">Payment Dashboard</Link>
             </li>
             <li>
-              <Link to="">Add Blogs</Link>
+              <Link to="">Blogs</Link>
             </li>
             <li>
               <Link to="/login">

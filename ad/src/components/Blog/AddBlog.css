@@ -1,0 +1,12 @@
+.blogimg {
+  width: 80%;
+}
+.addblogbtn {
+  margin-top: 10px;
+  width: 30%;
+  padding: 5px 10px;
+  border: none;
+  background: #677eff;
+  color: white;
+  border-radius: 20px;
+}

@@ -9,6 +9,8 @@ import Profile from "./Profile/Profile";
 import PrivateRoute from "./ProtectedRoutes";
 import About from "../components/About/AboutUs";
 import ProductDetail from "./Home/ProductDetail";
+import Blog from "./Blog/Blog";
+import BlogDetail from "./Blog/BlogDetail";
 
 const Body = () => {
   return (
@@ -20,6 +22,8 @@ const Body = () => {
         <Route path="/ourteam" element={<OurTeams />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
         <Route
           path="/contact"
           element={
