@@ -26,9 +26,11 @@ const productsSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    qty: {
+      type: Number,
+    },
     discount: {
       type: Number,
-      // max: [2, "Badi vo"],
       required: true,
     },
   },

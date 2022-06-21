@@ -11,6 +11,7 @@ import About from "../components/About/AboutUs";
 import ProductDetail from "./Home/ProductDetail";
 import Blog from "./Blog/Blog";
 import BlogDetail from "./Blog/BlogDetail";
+import CartScreen from "./Home/CartScreen";
 
 const Body = () => {
   return (
@@ -24,6 +25,7 @@ const Body = () => {
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route path="/cart/:id/*" element={<CartScreen />} />
         <Route
           path="/contact"
           element={
