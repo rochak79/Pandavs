@@ -125,8 +125,18 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li class="nav-item">
+                  <Link to="profile" class="nav-link">
+                    <i class="fas fa-user"></i>
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link to="cart" class="nav-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </Link>
+                </li>
+                <li class="nav-item">
                   <Link to="login" class="nav-link" onClick={logout}>
-                    Logout
+                    <i class="fa-solid fa-right-from-bracket"></i>
                   </Link>
                 </li>
                 <li class="nav-item"></li>
@@ -248,7 +258,7 @@ const Navbar = () => {
                 </li>
                 <li class="nav-item">
                   <Link to="login" class="nav-link">
-                    Login
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
                   </Link>
                 </li>
               </ul>

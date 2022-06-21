@@ -137,6 +137,7 @@
   border: none;
   background: #677eff;
   color: white;
+  outline: none;
 }
 .loginbtn_admin {
   width: 100%;

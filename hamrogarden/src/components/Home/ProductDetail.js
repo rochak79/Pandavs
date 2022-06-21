@@ -44,7 +44,7 @@ const PetScreen = () => {
         <div className="container mt-4 texty" style={{ marginBottom: "35px" }}>
           <div className="product_back">
             <Link to="/" className="product_back_text">
-              Back
+              <i class="fas fa-arrow-left"></i> &nbsp;Back
             </Link>
           </div>
           {loading ? (

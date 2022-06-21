@@ -12,6 +12,7 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
   const [address, setAddress] = useState("");
 
   const registerData = (e) => {
@@ -23,20 +24,24 @@ const Register = () => {
       password,
       address,
     };
-    axios
-      .post(`http://localhost:7000/user/register`, register)
-      .then((result) => {
-        console.log(result);
-        if (result.status === 201) {
-          console.log(result.data);
-          window.alert("User Registered Successfully");
-          window.location.replace("/login");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        window.alert("Login Failed");
-      });
+    if (password === confirm) {
+      axios
+        .post(`http://localhost:7000/user/register`, register)
+        .then((result) => {
+          console.log(result);
+          if (result.status === 201) {
+            console.log(result.data);
+            window.alert("User Registered Successfully");
+            window.location.replace("/login");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          window.alert("Login Failed");
+        });
+    } else {
+      window.alert("Password and Confirm password do not match!");
+    }
   };
 
   return (
@@ -78,6 +83,17 @@ const Register = () => {
                   placeholder="********"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                />
+                <Form.Label htmlFor="inputPassword5">
+                  Confirm Password
+                </Form.Label>
+                <Form.Control
+                  type="password"
+                  id="inputPassword5"
+                  aria-describedby="passwordHelpBlock"
+                  placeholder="********"
+                  value={confirm}
+                  onChange={(e) => setConfirm(e.target.value)}
                 />
                 <Form.Group
                   className="mb-3"
