@@ -1,16 +1,37 @@
-.profile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-.profile > * {
-  flex-basis: 100%;
+.student-profile .card {
+  border-radius: 10px;
 }
 
-.profile_left {
-  background: red;
+.student-profile .card .card-header .profile_img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 10px solid #ccc;
+  border-radius: 50%;
 }
-.profile_right {
-  background: green;
+
+.student-profile .card h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.student-profile .card p {
+  font-size: 16px;
+  color: #000;
+}
+
+.student-profile .table th,
+.student-profile .table td {
+  font-size: 14px;
+  padding: 5px 10px;
+  color: #000;
+}
+.update-profile {
+  border: none;
+  margin-left: 1em;
+  background-color: white;
+}
+.table > :not(:first-child) {
+  border: none;
 }

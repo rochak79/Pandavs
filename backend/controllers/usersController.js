@@ -5,7 +5,8 @@ const bcryptjs = require("bcryptjs");
 
 // Register a user
 exports.registerUser = async (req, res) => {
-  const { name, email, password, address } = req.body;
+  const { name, email, password, address, phone, gender, role, desc } =
+    req.body;
   const user = await User.findOne({ email: email });
   if (user) {
     res.status(400).json({
@@ -13,7 +14,7 @@ exports.registerUser = async (req, res) => {
       message: "Email already exists!",
     });
   } else {
-    if (name && email && password && address) {
+    if (name && email && password && address && phone && gender) {
       try {
         const salt = await bcryptjs.genSalt(10);
         const hashPassword = await bcryptjs.hash(password, salt);
@@ -22,6 +23,10 @@ exports.registerUser = async (req, res) => {
           email: email,
           password: hashPassword,
           address: address,
+          phone: phone,
+          gender: gender,
+          role: role,
+          desc: desc,
         });
         await doc.save();
 
