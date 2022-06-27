@@ -16,69 +16,69 @@ const Navbar = () => {
 
   if (token) {
     return (
-      <section class="ftco-section">
-        <div class="container-fluid px-md-5">
-          <div class="row justify-content-between">
-            <div class="col-md-8 order-md-last">
-              <div class="row">
-                <div class="col-md-6 text-center">
-                  <Link class="navbar-brand" to="#">
+      <section className="ftco-section">
+        <div className="container-fluid px-md-5">
+          <div className="row justify-content-between">
+            <div className="col-md-8 order-md-last">
+              <div className="row">
+                <div className="col-md-6 text-center">
+                  <Link className="navbar-brand" to="#">
                     <h2>HAMRO GARDEN</h2>
                   </Link>
                 </div>
-                <div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
-                  <form action="#" class="searchform order-lg-last">
-                    <div class="form-group d-flex">
+                <div className="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
+                  <form action="#" className="searchform order-lg-last">
+                    <div className="form-group d-flex">
                       <input
                         type="text"
-                        class="form-control pl-3"
+                        className="form-control pl-3"
                         placeholder="Search"
                       />
                       <button
                         type="submit"
                         placeholder=""
-                        class="form-control search"
+                        className="form-control search"
                       >
-                        <span class="fa fa-search"></span>
+                        <span className="fa fa-search"></span>
                       </button>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 d-flex">
-              <div class="social-media">
-                <p class="mb-0 d-flex">
+            <div className="col-md-4 d-flex">
+              <div className="social-media">
+                <p className="mb-0 d-flex">
                   <Link
                     to="#"
-                    class="d-flex align-items-center justify-content-center"
+                    className="d-flex align-items-center justify-content-center"
                   >
-                    <span class="fa fa-facebook">
-                      <i class="sr-only">Facebook</i>
+                    <span className="fa fa-facebook">
+                      <i className="sr-only">Facebook</i>
                     </span>
                   </Link>
                   <Link
                     to="#"
-                    class="d-flex align-items-center justify-content-center"
+                    className="d-flex align-items-center justify-content-center"
                   >
-                    <span class="fa fa-twitter">
-                      <i class="sr-only">Twitter</i>
+                    <span className="fa fa-twitter">
+                      <i className="sr-only">Twitter</i>
                     </span>
                   </Link>
                   <Link
                     to="#"
-                    class="d-flex align-items-center justify-content-center"
+                    className="d-flex align-items-center justify-content-center"
                   >
-                    <span class="fa fa-instagram">
-                      <i class="sr-only">Instagram</i>
+                    <span className="fa fa-instagram">
+                      <i className="sr-only">Instagram</i>
                     </span>
                   </Link>
                   <Link
                     to="#"
-                    class="d-flex align-items-center justify-content-center"
+                    className="d-flex align-items-center justify-content-center"
                   >
-                    <span class="fa fa-dribbble">
-                      <i class="sr-only">Dribbble</i>
+                    <span className="fa fa-dribbble">
+                      <i className="sr-only">Dribbble</i>
                     </span>
                   </Link>
                 </p>
@@ -87,12 +87,12 @@ const Navbar = () => {
           </div>
         </div>
         <nav
-          class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light"
+          className="navbar navbar-expand-lg ftco_navbar ftco-navbar-light"
           id="ftco-navbar"
         >
-          <div class="container-fluid">
+          <div className="container-fluid">
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-toggle="collapse"
               data-target="#ftco-nav"
@@ -100,46 +100,64 @@ const Navbar = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="fa fa-bars"></span> Menu
+              <span className="fa fa-bars text-dark"></span> Menu
             </button>
-            <div class="collapse navbar-collapse" id="ftco-nav">
-              <ul class="navbar-nav m-auto">
-                <li class="nav-item active">
-                  <Link to="/" class="nav-link">
+            <div className="collapse navbar-collapse" id="ftco-nav">
+              <ul className="navbar-nav m-auto">
+                <li className="nav-item active">
+                  <Link to="/" className="nav-link">
                     Home
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link to="about" class="nav-link">
+                <li className="nav-item">
+                  <Link to="about" className="nav-link">
                     About
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link to="blog" class="nav-link">
+                <li className="nav-item">
+                  <Link to="blog" className="nav-link">
                     Blog
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link to="contact" class="nav-link">
+                <li className="nav-item">
+                  <Link to="contact" className="nav-link">
                     Contact Us
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link to="profile" class="nav-link">
-                    <i class="fas fa-user"></i>
-                  </Link>
+                <li className="nav-item">
+                  <div className="btn-group">
+                    <button
+                      type="button"
+                      className="btn dropdown-toggle dropdown-menues"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    ></button>
+                    <div className="dropdown-menu">
+                      <a className="dropdown-item" href="profile">
+                        <Link to="profile" className="nav-link text-dark">
+                          <i className="fas fa-user"></i> &nbsp; PROFILE
+                        </Link>
+                      </a>
+                      <a className="dropdown-item" href="cart">
+                        <Link to="cart" className="nav-link text-dark">
+                          <i className="fa-solid fa-cart-shopping"></i>&nbsp;
+                          Cart
+                        </Link>
+                      </a>
+                      <a className="dropdown-item" href="#">
+                        <Link
+                          to="login"
+                          className="nav-link text-dark"
+                          onClick={logout}
+                        >
+                          <i className="fa-solid fa-right-from-bracket"></i>
+                          &nbsp; LOGOUT
+                        </Link>
+                      </a>
+                    </div>
+                  </div>
                 </li>
-                <li class="nav-item">
-                  <Link to="cart" class="nav-link">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </Link>
-                </li>
-                <li class="nav-item">
-                  <Link to="login" class="nav-link" onClick={logout}>
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                  </Link>
-                </li>
-                <li class="nav-item"></li>
               </ul>
             </div>
           </div>
@@ -148,69 +166,69 @@ const Navbar = () => {
     );
   } else {
     return (
-      <section class="ftco-section">
-        <div class="container-fluid px-md-5">
-          <div class="row justify-content-between">
-            <div class="col-md-8 order-md-last">
-              <div class="row">
-                <div class="col-md-6 text-center">
-                  <Link class="navbar-brand" to="#">
+      <section className="ftco-section">
+        <div className="container-fluid px-md-5">
+          <div className="row justify-content-between">
+            <div className="col-md-8 order-md-last">
+              <div className="row">
+                <div className="col-md-6 text-center">
+                  <Link className="navbar-brand" to="#">
                     <h2>HAMRO GARDEN</h2>
                   </Link>
                 </div>
-                <div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
-                  <form action="#" class="searchform order-lg-last">
-                    <div class="form-group d-flex">
+                <div className="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
+                  <form action="#" className="searchform order-lg-last">
+                    <div className="form-group d-flex">
                       <input
                         type="text"
-                        class="form-control pl-3"
+                        className="form-control pl-3"
                         placeholder="Search"
                       />
                       <button
                         type="submit"
                         placeholder=""
-                        class="form-control search"
+                        className="form-control search"
                       >
-                        <span class="fa fa-search"></span>
+                        <span className="fa fa-search"></span>
                       </button>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 d-flex">
-              <div class="social-media">
-                <p class="mb-0 d-flex">
+            <div className="col-md-4 d-flex">
+              <div className="social-media">
+                <p className="mb-0 d-flex">
                   <Link
                     to="#"
-                    class="d-flex align-items-center justify-content-center"
+                    className="d-flex align-items-center justify-content-center"
                   >
-                    <span class="fa fa-facebook">
-                      <i class="sr-only">Facebook</i>
+                    <span className="fa fa-facebook">
+                      <i className="sr-only">Facebook</i>
                     </span>
                   </Link>
                   <Link
                     to="#"
-                    class="d-flex align-items-center justify-content-center"
+                    className="d-flex align-items-center justify-content-center"
                   >
-                    <span class="fa fa-twitter">
-                      <i class="sr-only">Twitter</i>
+                    <span className="fa fa-twitter">
+                      <i className="sr-only">Twitter</i>
                     </span>
                   </Link>
                   <Link
                     to="#"
-                    class="d-flex align-items-center justify-content-center"
+                    className="d-flex align-items-center justify-content-center"
                   >
-                    <span class="fa fa-instagram">
-                      <i class="sr-only">Instagram</i>
+                    <span className="fa fa-instagram">
+                      <i className="sr-only">Instagram</i>
                     </span>
                   </Link>
                   <Link
                     to="#"
-                    class="d-flex align-items-center justify-content-center"
+                    className="d-flex align-items-center justify-content-center"
                   >
-                    <span class="fa fa-dribbble">
-                      <i class="sr-only">Dribbble</i>
+                    <span className="fa fa-dribbble">
+                      <i className="sr-only">Dribbble</i>
                     </span>
                   </Link>
                 </p>
@@ -219,12 +237,12 @@ const Navbar = () => {
           </div>
         </div>
         <nav
-          class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light"
+          className="navbar navbar-expand-lg ftco_navbar ftco-navbar-light"
           id="ftco-navbar"
         >
-          <div class="container-fluid">
+          <div className="container-fluid">
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-toggle="collapse"
               data-target="#ftco-nav"
@@ -232,34 +250,54 @@ const Navbar = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="fa fa-bars"></span> Menu
+              <span className="fa fa-bars"></span> Menu
             </button>
-            <div class="collapse navbar-collapse" id="ftco-nav">
-              <ul class="navbar-nav m-auto">
-                <li class="nav-item active">
-                  <Link to="/" class="nav-link">
+            <div className="collapse navbar-collapse" id="ftco-nav">
+              <ul className="navbar-nav m-auto">
+                <li className="nav-item active">
+                  <Link to="/" className="nav-link">
                     Home
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link to="about" class="nav-link">
+                <li className="nav-item">
+                  <Link to="about" className="nav-link">
                     About
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link to="blog" class="nav-link">
+                <li className="nav-item">
+                  <Link to="blog" className="nav-link">
                     Blog
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link to="contact" class="nav-link">
+                <li className="nav-item">
+                  <Link to="contact" className="nav-link">
                     Contact Us
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link to="login" class="nav-link">
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                  </Link>
+                <li className="nav-item">
+                  <div className="btn-group">
+                    <button
+                      type="button"
+                      className="btn dropdown-toggle dropdown-menues"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    ></button>
+                    <div className="dropdown-menu">
+                      <a className="dropdown-item" href="#">
+                        <Link to="register" className="nav-link text-dark">
+                          <i class="fa-solid fa-right-to-bracket"></i> &nbsp;
+                          REGISTER
+                        </Link>
+                      </a>
+                      <a className="dropdown-item" href="#">
+                        <Link to="login" className="nav-link text-dark">
+                          <i className="fa-solid fa-arrow-right-to-bracket"></i>{" "}
+                          &nbsp; LOGIN
+                        </Link>
+                      </a>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>

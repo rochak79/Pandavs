@@ -20,13 +20,11 @@ const Login = () => {
         if (result.status === 201) {
           const token = result.data.token;
           localStorage.setItem("token", token);
-
           window.alert("Login Success");
-
+          console.log(result.data.user);
           // user
           const userData = result.data.user;
           localStorage.setItem("userData", JSON.stringify(userData));
-          // const finalUser = JSON.stringify(userData);
           window.location.replace("/");
         }
       })

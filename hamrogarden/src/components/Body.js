@@ -12,6 +12,7 @@ import ProductDetail from "./Home/ProductDetail";
 import Blog from "./Blog/Blog";
 import BlogDetail from "./Blog/BlogDetail";
 import CartScreen from "./Home/CartScreen";
+import UpdateProfile from "./Profile/UpdateProfile";
 
 const Body = () => {
   return (
@@ -46,6 +47,14 @@ const Body = () => {
           element={
             <PrivateRoute>
               <ProductDetail />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/user/:id"
+          element={
+            <PrivateRoute>
+              <UpdateProfile />
             </PrivateRoute>
           }
         />

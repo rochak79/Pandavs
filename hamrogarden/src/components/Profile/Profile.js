@@ -1,10 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Profile.css";
 
 const Profile = () => {
   const dataa = localStorage.getItem("userData");
   const final = JSON.parse(dataa);
   console.log(final);
+
+  // const fd = localStorage.getItem("updatedData");
+  // const fdd = JSON.parse(fd);
+  // console.log(fdd);
 
   return (
     <>
@@ -38,9 +43,11 @@ const Profile = () => {
                 <div class="card-header bg-transparent border-0">
                   <h3 class="mb-0">
                     <i class="far fa-clone pr-1"></i>General Information
-                    <button class="update-profile">
-                      <i class="fas fa-edit"></i>
-                    </button>
+                    <Link to={"/user/" + final._id}>
+                      <button class="update-profile">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                    </Link>
                   </h3>
                 </div>
                 <div class="card-body pt-0">
