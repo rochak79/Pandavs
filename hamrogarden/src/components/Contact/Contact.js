@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,7 +22,7 @@ const Contact = () => {
       .then((result) => {
         console.log(result);
         if (result.status === 201) {
-          window.alert("Message sent!");
+          toast.info("Message sent to admin!");
         }
       })
       .catch((error) => {
@@ -120,6 +123,17 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <ToastContainer
+        position="top-right"
+        autoClose={8000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

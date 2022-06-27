@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./AddProduct.css";
 import addproduct from "../images/addproduct.jpg";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddProduct = () => {
   const [name, setName] = useState("");
@@ -32,8 +34,10 @@ const AddProduct = () => {
       })
       .then((result) => {
         console.log(result);
-        window.alert("Product Added!");
-        window.location.replace("/productdashboard");
+        toast.success("Product addedd successfully!!");
+        window.setTimeout(function () {
+          window.location.replace("/productdashboard");
+        }, 2000);
       })
       .catch((error) => {
         const err = error.response.data.message;

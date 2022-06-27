@@ -46,10 +46,16 @@
   padding: 5px 20px;
   background: rgb(69, 137, 69);
   border: none;
-  /* border-radius: 20px; */
   color: white;
 }
-
+.pro-card {
+  height: 500px !important;
+  margin: 1em;
+}
+.pro-desc {
+  height: 90px !important;
+  overflow-y: scroll;
+}
 .shell {
   padding: 80px 0;
   width: auto;
@@ -271,6 +277,11 @@ a.buy-btn:focus {
     border-color: #ff9800;
     background: #ff9800;
     color: #fff;
+  }
+  .pro-card {
+    height: 500px !important;
+    margin: 0.1em;
+    margin-top: 2em;
   }
 }
 .ns_container {

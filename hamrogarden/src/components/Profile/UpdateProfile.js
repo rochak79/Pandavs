@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./UpdateProfile.css";
 
 const UpdateProfile = () => {
@@ -13,16 +13,10 @@ const UpdateProfile = () => {
   const [desc, setDesc] = useState("");
 
   const [getUser, setGetUser] = useState([]);
-  const [userData, setUserData] = useState([]);
-
-  // const dataa = localStorage.getItem("userData");
-  // const final = JSON.parse(dataa);
-  // console.log(final);
 
   //   get the user detail
   useEffect(() => {
     axios.get(`http://localhost:7000/user/user/${id}`).then((result) => {
-      const userDetail = result.data.user;
       setGetUser(result.data.user);
     });
   }, []);
@@ -51,7 +45,7 @@ const UpdateProfile = () => {
 
         console.log(test);
         window.alert("Success");
-        // window.location.replace("/profile");
+        window.location.replace("/profile");
       });
   };
 
@@ -59,6 +53,12 @@ const UpdateProfile = () => {
     <div>
       <div className="user-profile py-4">
         <div className="container">
+          <Link to="/profile">
+            {" "}
+            <button className="btn-back">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+            </button>
+          </Link>
           <h1>Update Profile</h1>
           <div className="row">
             <div className="col-lg-4">
@@ -130,9 +130,10 @@ const UpdateProfile = () => {
                       <th width="30%">Phone </th>
                       <td width="2%">:</td>
                       <td>
+                        +977
                         <input
                           type="text"
-                          placeholder={"+977" + getUser.phone}
+                          placeholder={getUser.phone}
                           className="hereko"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}

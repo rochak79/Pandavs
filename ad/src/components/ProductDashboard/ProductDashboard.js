@@ -3,6 +3,7 @@ import "./ProductDashboard.css";
 import add from "../images/add.png";
 import d from "../images/d.png";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const ProductDashboard = () => {
   return (
@@ -32,6 +33,17 @@ const ProductDashboard = () => {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={8000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

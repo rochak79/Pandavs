@@ -29,18 +29,23 @@ const Navbar = () => {
                 <div className="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
                   <form action="#" className="searchform order-lg-last">
                     <div className="form-group d-flex">
-                      <input
-                        type="text"
-                        className="form-control pl-3"
-                        placeholder="Search"
-                      />
-                      <button
-                        type="submit"
-                        placeholder=""
-                        className="form-control search"
-                      >
-                        <span className="fa fa-search"></span>
-                      </button>
+                      <form className="form-inline my-2 my-lg-0">
+                        <div class="input-group rounded">
+                          <input
+                            type="search"
+                            class="form-control rounded"
+                            placeholder="Search"
+                            aria-label="Search"
+                            aria-describedby="search-addon"
+                          />
+                          <button
+                            class="input-group-text border-0"
+                            id="search-addon"
+                          >
+                            <i class="fas fa-search"></i>
+                          </button>
+                        </div>
+                      </form>
                     </div>
                   </form>
                 </div>
@@ -140,7 +145,7 @@ const Navbar = () => {
                         </Link>
                       </a>
                       <a className="dropdown-item" href="cart">
-                        <Link to="cart" className="nav-link text-dark">
+                        <Link to="/cart" className="nav-link text-dark">
                           <i className="fa-solid fa-cart-shopping"></i>&nbsp;
                           Cart
                         </Link>
@@ -177,22 +182,25 @@ const Navbar = () => {
                   </Link>
                 </div>
                 <div className="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
-                  <form action="#" className="searchform order-lg-last">
-                    <div className="form-group d-flex">
-                      <input
-                        type="text"
-                        className="form-control pl-3"
-                        placeholder="Search"
-                      />
-                      <button
-                        type="submit"
-                        placeholder=""
-                        className="form-control search"
-                      >
-                        <span className="fa fa-search"></span>
-                      </button>
-                    </div>
-                  </form>
+                  <div className="form-group d-flex">
+                    <form className="form-inline my-2 my-lg-0">
+                      <div class="input-group rounded">
+                        <input
+                          type="search"
+                          class="form-control rounded"
+                          placeholder="Search"
+                          aria-label="Search"
+                          aria-describedby="search-addon"
+                        />
+                        <button
+                          class="input-group-text border-0"
+                          id="search-addon"
+                        >
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>

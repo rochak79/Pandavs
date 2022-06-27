@@ -14,6 +14,7 @@ import {
   Alert,
 } from "react-bootstrap";
 import { addToCart, removeFromCart } from "../../action/cartAction";
+
 const CartScreen = ({ history }) => {
   const { id } = useParams();
   const productId = id;

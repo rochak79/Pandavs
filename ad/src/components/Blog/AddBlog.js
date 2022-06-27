@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./AddBlog.css";
 import axios from "axios";
 import b from "../images/b.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddBlog = () => {
   const [title, setTitle] = useState("");
@@ -19,8 +21,10 @@ const AddBlog = () => {
       .then((result) => {
         console.log(result.data.blog);
         setBlog(result.data.blog);
-        window.alert("Blog created!");
-        window.location.replace("/blogdashboard");
+        toast.success("Blog addedd successfully!!");
+        window.setTimeout(function () {
+          window.location.replace("/blogdashboard");
+        }, 2000);
       })
       .catch((err) => {
         const error = err.response.message;

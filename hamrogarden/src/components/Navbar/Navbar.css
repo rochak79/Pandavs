@@ -222,51 +222,6 @@ section {
   color: #fff;
 }
 
-.searchform {
-  height: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  border-radius: 40px;
-}
-@media (min-width: 992px) {
-  .searchform {
-    border: 1px solid #000;
-    width: 300px;
-  }
-}
-.searchform .form-control {
-  width: calc(100% - 50px);
-  border: none;
-  background: #eee !important;
-  color: rgba(0, 0, 0, 0.7) !important;
-  font-size: 14px;
-}
-.searchform .form-control::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-
-  color: rgba(0, 0, 0, 0.7) !important;
-}
-.searchform .form-control::-moz-placeholder {
-  /* Firefox 19+ */
-  color: rgba(0, 0, 0, 0.7) !important;
-}
-.searchform .form-control:-ms-input-placeholder {
-  /* IE 0+ */
-  color: rgba(0, 0, 0, 0.7) !important;
-}
-.searchform .form-control:-moz-placeholder {
-  /* Firefox 18- */
-  color: rgba(0, 0, 0, 0.7) !important;
-}
-.searchform .search {
-  width: 50px;
-  height: 50px;
-  background: #ff0000 !important;
-}
-.searchform .search span {
-  font-size: 16px;
-  color: #fff;
-}
 #membership {
   border: none;
   outline: none;

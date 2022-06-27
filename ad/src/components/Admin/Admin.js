@@ -2,8 +2,13 @@ import React from "react";
 import "./Admin.css";
 import Mid from "../Mid";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Admin = () => {
+  const notify = () => {
+    toast.info("Hello");
+  };
   const logout = () => {
     localStorage.clear();
     window.location.replace("/");
@@ -63,6 +68,17 @@ const Admin = () => {
         <section>
           <Mid />
         </section>
+        <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </body>
     );
   } else {

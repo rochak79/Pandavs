@@ -13,6 +13,7 @@ import Blog from "./Blog/Blog";
 import BlogDetail from "./Blog/BlogDetail";
 import CartScreen from "./Home/CartScreen";
 import UpdateProfile from "./Profile/UpdateProfile";
+import Cart from "./Home/Cart";
 
 const Body = () => {
   return (
@@ -25,6 +26,7 @@ const Body = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route
           path="/cart/:id/*"

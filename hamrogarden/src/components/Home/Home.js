@@ -65,7 +65,7 @@ const Home = () => {
               {data.map((result) => {
                 return (
                   <div className="col-12 col-sm-8 col-md-6 col-lg-4">
-                    <div className="bg-light card">
+                    <div className="bg-light card pro-card">
                       <img
                         className="card-img"
                         src={"http://localhost:7000/" + result.image}
@@ -73,7 +73,7 @@ const Home = () => {
                       />
                       <div className="card-body">
                         <h4 className="card-title">{result.name}</h4>
-                        <p className="card-text">{result.desc}</p>
+                        <p className="card-text pro-desc">{result.desc}</p>
                         <div className="buy d-flex justify-content-between align-items-center">
                           <div>
                             <h5 className="mt-4">

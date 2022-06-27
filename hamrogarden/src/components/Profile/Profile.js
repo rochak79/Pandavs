@@ -15,6 +15,12 @@ const Profile = () => {
     <>
       <div class="student-profile py-4">
         <div class="container">
+          <Link to="/">
+            {" "}
+            <button className="btn-back mb-4">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+            </button>
+          </Link>
           <div class="row">
             <div class="col-lg-4">
               <div class="card shadow-sm">
