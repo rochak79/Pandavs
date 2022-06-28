@@ -1,0 +1,12 @@
+.fertilizers {
+  display: flex;
+}
+.left {
+  background-color: green;
+  width: 25%;
+}
+.right {
+  padding: 1em !important;
+  width: 75%;
+  background-color: red;
+}

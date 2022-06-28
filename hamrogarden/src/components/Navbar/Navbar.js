@@ -135,6 +135,11 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link to="fertilizers" className="nav-link">
+                    Fertilizers
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <div className="btn-group">
                     <button
                       type="button"
