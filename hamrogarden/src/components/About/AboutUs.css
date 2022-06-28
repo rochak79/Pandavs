@@ -47,7 +47,6 @@
 
 /* first container button */
 .btn {
-  position: absolute;
   bottom: 10px;
   right: 0;
 }

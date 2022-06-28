@@ -14,6 +14,8 @@ import BlogDetail from "./Blog/BlogDetail";
 import CartScreen from "./Home/CartScreen";
 import UpdateProfile from "./Profile/UpdateProfile";
 import Cart from "./Home/Cart";
+import Forum from "./Forum/Forum";
+import SimgleForum from "./Forum/SimgleForum";
 
 const Body = () => {
   return (
@@ -27,7 +29,9 @@ const Body = () => {
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/forum" element={<Forum />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route path="/forum/:id" element={<SimgleForum />} />
         <Route
           path="/cart/:id/*"
           element={

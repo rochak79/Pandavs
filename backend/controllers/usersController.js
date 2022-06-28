@@ -141,30 +141,21 @@ exports.getUserDetails = async (req, res, next) => {
 
 // update a user
 exports.updateUser = async (req, res) => {
-  try {
-    let user = await User.findById(req.params.id);
-    if (!user) {
-      return res.status(500).json({
-        success: false,
-        message: "Unable to locate your User!",
-      });
-    } else {
-      (UserUpdated = await User.findByIdAndUpdate(req.params.id, req.body)),
-        {
-          new: true,
-          runValidators: true,
-          useFindAndModify: false,
-        };
-      res.status(200).json({
-        success: true,
-        message: "Your User updated successfully!",
-        UserUpdated,
-      });
-    }
-  } catch (error) {
-    res.status(500).json({
+  let user = User.findById(req.params.id);
+  if (!user) {
+    return res.status(500).json({
       success: false,
-      message: "Unable to update your User!",
+      message: "Unable to locate User!",
     });
   }
+  user = await User.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+    useFindAndModify: false,
+  });
+  res.status(200).json({
+    success: true,
+    message: "User updated!",
+    user,
+  });
 };

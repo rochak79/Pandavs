@@ -17,4 +17,5 @@ router.route("/user/:id").get(getUserDetails);
 router.route("/users").get(getAllUsers);
 
 router.route("/user/:id").put(updateUser);
+
 module.exports = router;

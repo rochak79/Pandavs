@@ -9,6 +9,7 @@ const contact = require("./routes/contactRoutes");
 const users = require("./routes/usersRoutes");
 const admin = require("./routes/adminRoutes");
 const blog = require("./routes/blogRoutes");
+const forum = require("./routes/forumRoutes");
 
 const app = express();
 const port = process.env.PORT;
@@ -32,6 +33,7 @@ app.use("/api/contact", contact);
 app.use("/user", users);
 app.use("/admin", admin);
 app.use("/blog", blog);
+app.use("/forum", forum);
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);

@@ -130,6 +130,11 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link to="forum" className="nav-link">
+                    Forum
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <div className="btn-group">
                     <button
                       type="button"

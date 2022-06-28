@@ -7,10 +7,6 @@ const Profile = () => {
   const final = JSON.parse(dataa);
   console.log(final);
 
-  // const fd = localStorage.getItem("updatedData");
-  // const fdd = JSON.parse(fd);
-  // console.log(fdd);
-
   return (
     <>
       <div class="student-profile py-4">

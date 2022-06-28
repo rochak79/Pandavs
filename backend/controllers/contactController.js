@@ -57,37 +57,27 @@ exports.getAllContacts = async (req, res) => {
   }
 };
 
-// Edit contact
+// UPdate contact
 exports.updateContact = async (req, res) => {
-  try {
-    let contact = await Contact.findById(req.params.id);
-    if (!contact) {
-      return res.status(404).json({
-        success: false,
-        message: "Unable to locate your contact message!",
-      });
-    } else {
-      (contactUpdated = await Contact.findByIdAndUpdate(
-        req.params.id,
-        req.body
-      )),
-        {
-          new: true,
-          runValidators: true,
-          useFindAndModify: false,
-        };
-      res.status(201).json({
-        success: true,
-        message: "Your message updated successfully!",
-      });
-    }
-  } catch (error) {
-    res.status(500).json({
+  let contact = Contact.findById(req.params.id);
+  if (!contact) {
+    return res.status(500).json({
       success: false,
-      message: "Unable to update your message!",
+      message: "Unable to locate Contact!",
     });
   }
+  contact = await Contact.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+    useFindAndModify: false,
+  });
+  res.status(200).json({
+    success: true,
+    message: "Contact updated!",
+    contact,
+  });
 };
+
 // Delete a contact
 exports.deleteContact = async (req, res) => {
   let contact = await Contact.findById(req.params.id);
@@ -99,6 +89,10 @@ exports.deleteContact = async (req, res) => {
     });
   } else {
     await contact.remove();
+    res.status(200).json({
+      success: true,
+      message: "Contact message deleted successfully!",
+    });
 
     res.status(500).json({
       success: true,

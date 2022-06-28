@@ -310,9 +310,9 @@ a.buy-btn:focus {
 }
 .form-search {
   margin: 0 auto;
+  display: flex;
   text-align: center;
   font: bold 13px sans-serif;
-  /* max-width: 100000%; */
   position: relative;
 }
 

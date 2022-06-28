@@ -69,15 +69,15 @@ const UpdateProfile = () => {
                     src="https://placeimg.com/640/480/arch/any"
                     alt=""
                   />
-                  <h1>
+                  <h3>
                     <input
                       type="text"
                       placeholder={getUser.name}
-                      className="hereko"
+                      className="text-center hereko"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                     />
-                  </h1>
+                  </h3>
                 </div>
                 <div className="card-body">
                   <p className="mb-0">
