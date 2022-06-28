@@ -102,7 +102,7 @@ const Forum = () => {
             {forums.map((forum) => {
               return (
                 <>
-                  <div class="card" style={{ width: "18rem" }}>
+                  <div class="card forum-main-card" style={{ width: "18rem" }}>
                     <div class="card-body forum-row">
                       <h5 class="card-title">{forum.title}</h5>
                       <h6 class="card-subtitle mb-2 text-muted">

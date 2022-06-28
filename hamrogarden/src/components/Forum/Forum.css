@@ -36,6 +36,8 @@
 .forum-right {
   padding: 2em;
   width: 70%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 40px 0 0 40px;
 }
 .forum-row {
   gap: 1em;
@@ -118,9 +120,6 @@
 a {
   color: #585858;
 }
-i {
-  color: #d02d2c;
-}
 
 .modal__close {
   position: absolute;
@@ -134,4 +133,18 @@ i {
 }
 .forum-query {
   height: 500px !important;
+}
+@media (max-width: 991px) {
+  .forum {
+    flex-direction: column;
+  }
+  .forum-left {
+    width: 100%;
+  }
+  .forum-right {
+    width: 100%;
+  }
+  .forum-main-card {
+    width: 100% !important;
+  }
 }
