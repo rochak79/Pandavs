@@ -265,6 +265,7 @@ a.buy-btn:focus {
   flex-direction: column;
   text-align: center;
   margin-bottom: 2em !important;
+  margin-top: 2em !important;
 }
 .inner-newsletter {
   padding: 5em 25em;

@@ -33,6 +33,11 @@ const productsSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    category: {
+      type: String,
+      enum: ["Flower", "Seed", "Tool", "Fertilizer"],
+      default: "Flower",
+    },
   },
   { timestamps: true }
 );

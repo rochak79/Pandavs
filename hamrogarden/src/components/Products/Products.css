@@ -1,0 +1,12 @@
+.product {
+  display: flex;
+}
+.product-left {
+  width: 25%;
+  padding: 2em;
+  border-right: 1px solid black;
+}
+.product-right {
+  width: 75%;
+  overflow-x: hidden;
+}

@@ -67,12 +67,18 @@ const PetScreen = () => {
                     <h3>{pdata.name}</h3>
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <span style={{ fontWeight: "bold" }}>Price:</span>Rs.
+                    <span style={{ fontWeight: "bold" }}>Price: &nbsp;</span>Rs.
                     {pdata.new_price}
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <span style={{ fontWeight: "bold" }}>Description:</span>
+                    <span style={{ fontWeight: "bold" }}>
+                      Description: &nbsp;
+                    </span>
                     {pdata.desc}
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <span style={{ fontWeight: "bold" }}>Category: &nbsp;</span>
+                    {pdata.category}
                   </ListGroup.Item>
                 </ListGroup>
               </Col>

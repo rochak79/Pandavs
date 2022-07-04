@@ -32,18 +32,6 @@ const Home = () => {
       }
     );
   };
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios
-      .get("http://localhost:7000/api/product/products")
-      .then((result) => {
-        setData(result.data.products);
-        console.log(result.data.products);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
 
   return (
     <>
@@ -61,75 +49,6 @@ const Home = () => {
           <button className="home_btn">Browse More</button>
         </div>
       </div>
-
-      <>
-        {/* <div class="shell">
-          <div class="container">
-            <div class="row">
-              {data.map((result) => {
-                return (
-                  <div className="col-12 col-sm-8 col-md-6 col-lg-4">
-                    <div className="bg-light card pro-card">
-                      <img
-                        className="card-img"
-                        src={"http://localhost:7000/" + result.image}
-                        alt="Image"
-                      />
-                      <div className="card-body">
-                        <h4 className="card-title">{result.name}</h4>
-                        <p className="card-text pro-desc">{result.desc}</p>
-                        <div className="buy d-flex justify-content-between align-items-center">
-                          <div>
-                            <h5 className="mt-4">
-                              {" "}
-                              <strike>
-                                <small className="text-danger">
-                                  Rs:{result.old_price}
-                                </small>
-                              </strike>{" "}
-                              <div className="text-success">
-                                Rs:
-                                {result.new_price}
-                              </div>
-                            </h5>
-                          </div>
-                          <div className="">
-                            <Link
-                              to={"/product/" + result._id}
-                              className="btn-learnmore btn btn-success mt-3 "
-                            >
-                              Learn More
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div> */}
-        {/* newsletter */}
-        {/* <div className="ns_container">
-          <div className="ns_section">
-            <div className="ns_content">
-              <h2>Subscribe to our NEWSLETTER</h2>
-              <p>
-                <form class="form-search" onSubmit={sendEmail} ref={form}>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email ..."
-                    required
-                  />
-                  <button type="submit">Send</button>
-                </form>
-              </p>
-            </div>
-          </div>
-        </div> */}
-      </>
 
       {/* Trusted partner */}
       <div className="trusted">

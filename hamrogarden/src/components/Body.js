@@ -16,8 +16,7 @@ import UpdateProfile from "./Profile/UpdateProfile";
 import Cart from "./Home/Cart";
 import Forum from "./Forum/Forum";
 import SimgleForum from "./Forum/SimgleForum";
-import Fertilizers from "./Products/Fertilizers/Fertilizers";
-import FertilizerDetail from "./Products/Fertilizers/FertilizerDetail";
+import Products from "./Products/Products";
 
 const Body = () => {
   return (
@@ -34,8 +33,7 @@ const Body = () => {
         <Route path="/forum" element={<Forum />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/forum/:id" element={<SimgleForum />} />
-        <Route path="/fertilizers" element={<Fertilizers />} />
-        <Route path="/fertilizer/:id" element={<FertilizerDetail />} />
+        <Route path="/products" element={<Products />} />
         <Route
           path="/cart/:id/*"
           element={

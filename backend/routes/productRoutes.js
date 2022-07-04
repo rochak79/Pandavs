@@ -11,8 +11,17 @@ const Products = require("../models/Product");
 
 // Add product
 router.post("/addproduct", upload.single("image"), async (req, res) => {
-  const { name, old_price, new_price, desc, image, stock, qty, discount } =
-    req.body;
+  const {
+    name,
+    old_price,
+    new_price,
+    desc,
+    image,
+    stock,
+    qty,
+    discount,
+    category,
+  } = req.body;
   const dis = discount;
   const dl = dis.length;
   const nprice = new_price;
@@ -68,6 +77,7 @@ router.post("/addproduct", upload.single("image"), async (req, res) => {
         stock: req.body.stock,
         discount: req.body.discount,
         qty: req.body.qty,
+        category: req.body.category,
       });
       await product.save();
       res.status(200).json({
