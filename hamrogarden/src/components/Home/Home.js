@@ -31,11 +31,9 @@ const Home = () => {
       .then((result) => {
         setData(result.data.products);
         console.log(result.data.products);
-        // console.log(result.data.products);
       })
       .catch((err) => {
         console.log(err);
-        // alert("Error receiving data");
       });
   }, []);
 
