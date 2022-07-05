@@ -1,0 +1,22 @@
+.checkout-success {
+  width: 300px;
+  text-align: center;
+  margin: 20px auto;
+  padding: 100px 0;
+}
+
+.checkout-success h2 {
+  color: rgb(17, 134, 17);
+}
+
+.checkout-success a {
+  text-decoration: none;
+}
+
+.returnHome {
+  border: none;
+  color: white;
+  background-color: #6d6363;
+  padding: 10px 30px;
+  border-radius: 8px;
+}

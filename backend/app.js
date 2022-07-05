@@ -1,22 +1,24 @@
-const express = require("express");
-const cors = require("cors");
-const connectDB = require("./config/connectdb");
-const dotenv = require("dotenv");
-dotenv.config({ path: "./config/.env" });
-const productRoutes = require("./routes/productRoutes");
-const path = require("path");
-const contact = require("./routes/contactRoutes");
-const users = require("./routes/usersRoutes");
-const admin = require("./routes/adminRoutes");
-const blog = require("./routes/blogRoutes");
-const forum = require("./routes/forumRoutes");
+const express = require('express');
+const cors = require('cors');
+const connectDB = require('./config/connectdb');
+const dotenv = require('dotenv');
+dotenv.config({ path: './config/.env' });
+const productRoutes = require('./routes/productRoutes');
+const path = require('path');
+const contact = require('./routes/contactRoutes');
+const users = require('./routes/usersRoutes');
+const admin = require('./routes/adminRoutes');
+const blog = require('./routes/blogRoutes');
+const forum = require('./routes/forumRoutes');
+
+const stripe = require('./routes/stripeRoutes');
 
 const app = express();
 const port = process.env.PORT;
 const DATABASE_URL = process.env.DATABASE_URL;
 
 // Static folder visible
-app.use(express.static(path.join(__dirname, "public/images")));
+app.use(express.static(path.join(__dirname, 'public/images')));
 
 // CORS Policy
 app.use(cors());
@@ -28,12 +30,17 @@ connectDB(DATABASE_URL);
 app.use(express.json());
 
 // Load routes
-app.use("/api/product", productRoutes);
-app.use("/api/contact", contact);
-app.use("/user", users);
-app.use("/admin", admin);
-app.use("/blog", blog);
-app.use("/forum", forum);
+app.use('/api/product', productRoutes);
+app.use('/api/contact', contact);
+app.use('/user', users);
+app.use('/admin', admin);
+app.use('/blog', blog);
+app.use('/forum', forum);
+app.use('/stripe', stripe);
+
+//payment
+
+app.post('/payment/create');
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
