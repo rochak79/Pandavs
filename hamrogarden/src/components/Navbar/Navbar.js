@@ -134,11 +134,7 @@ const Navbar = () => {
                     Contact Us
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link to="forum" className="nav-link">
-                    Forum
-                  </Link>
-                </li>
+                
                 <li className="nav-item">
                   <div className="btn-group">
                     <button
@@ -152,6 +148,11 @@ const Navbar = () => {
                       <a className="dropdown-item" href="profile">
                         <Link to="profile" className="nav-link text-dark">
                           <i className="fas fa-user"></i> &nbsp; PROFILE
+                        </Link>
+                      </a>
+                      <a className="dropdown-item" href="forum">
+                        <Link to="forum" className="nav-link text-dark">
+                          <i className="fas fa-comments"></i> &nbsp; FORUM
                         </Link>
                       </a>
                       <a className="dropdown-item" href="cart">

@@ -54,8 +54,8 @@ const Register = () => {
   return (
     <div>
       <section
-        className="vh-100 pt-5 pb-lg-5 registration"
-        style={{ background: "#eee" }}
+        className="vh-100 pt-5 pb-lg-5 mb-5 registration"
+        style={{ background: "#eee " }}
       >
         <div style={{ background: "#eee" }}>
           <div className="container pb-lg-5 registration">
@@ -230,7 +230,7 @@ const Register = () => {
                             </div>
                           </div>
                           <p>
-                            <Link to="/login" className="regtolog">
+                            <Link to="/login" className="regtolog text-danger">
                               Click here
                             </Link>{" "}
                             if you already have an account.{" "}

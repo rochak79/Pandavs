@@ -4,12 +4,34 @@ import "./Products.css";
 import { Link } from "react-router-dom";
 
 const Products = () => {
+
+  
+
+  
+  // handleTextSearch = (e) =>{
+  //   let searchTerm = e.currentTarget.value;
+  //   axios.get(`http://localhost:7000/api/product/products`).then((res)=>{
+  //     if (res.data.success) {
+  //       filterContent(res.data.products, searchTerm)
+  //     }
+  //   });
+  // };
+  
+  
+
+ 
+
+
   const [product, setProduct] = useState([]);
+  
+
   useEffect(() => {
     axios.get(`http://localhost:7000/api/product/products`).then((result) => {
       setProduct(result.data.products);
     });
   }, []);
+
+  
   return (
     <div className="product">
       <div className="product-left">
@@ -21,6 +43,8 @@ const Products = () => {
             class="form-control"
             placeholder="Type query"
             aria-label="Search"
+            
+            
           />
         </div>
       </div>

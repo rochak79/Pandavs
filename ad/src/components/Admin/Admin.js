@@ -15,15 +15,17 @@ const Admin = () => {
   };
 
   const token = localStorage.getItem("adminInfo");
-  console.log(token);
+  
+  
+  
 
   if (token) {
     return (
       <body>
         <input type="checkbox" name="" id="check" />
         <label htmlFor="check">
-          <i class="fa-solid fa-bars" id="btn"></i>
-          <i class="fa-solid fa-xmark" id="cancel"></i>
+          <i className="fa-solid fa-bars" id="btn"></i>
+          <i className="fa-solid fa-xmark" id="cancel"></i>
           <i> </i>
         </label>
         <div className="textt">HAMRO GARDEN</div>
@@ -32,7 +34,7 @@ const Admin = () => {
             Hi, {token} &nbsp;
             <button className="fs_div">
               <i
-                class="fa fa-sign-out"
+                className="fa fa-sign-out"
                 aria-hidden="true logout_fs"
                 onClick={logout}
               ></i>
@@ -60,13 +62,14 @@ const Admin = () => {
             <li>
               <Link to="" onClick={logout}>
                 Logout &nbsp; &nbsp;{" "}
-                <i class="fa fa-sign-out" aria-hidden="true logout_fs"></i>
+                <i className="fa fa-sign-out" aria-hidden="true logout_fs"></i>
               </Link>
             </li>
           </ul>
         </div>
         <section>
           <Mid />
+          
         </section>
         <ToastContainer
           position="top-right"
@@ -80,14 +83,15 @@ const Admin = () => {
           pauseOnHover
         />
       </body>
+      
     );
   } else {
     return (
       <body>
         <input type="checkbox" name="" id="check" />
         <label htmlFor="check">
-          <i class="fa-solid fa-bars" id="btn"></i>
-          <i class="fa-solid fa-xmark" id="cancel"></i>
+          <i className="fa-solid fa-bars" id="btn"></i>
+          <i className="fa-solid fa-xmark" id="cancel"></i>
           <i> </i>
         </label>
         <div className="textt">HAMRO GARDEN</div>
@@ -96,7 +100,7 @@ const Admin = () => {
             Hi, Admin. &nbsp;
             <button className="fs_div">
               <Link to="/login">
-                <i class="fa fa-sign-in login_fs" aria-hidden="true"></i>
+                <i className="fa fa-sign-in login_fs" aria-hidden="true"></i>
               </Link>
             </button>
           </header>
@@ -122,7 +126,7 @@ const Admin = () => {
             <li>
               <Link to="/login">
                 Login &nbsp; &nbsp;{" "}
-                <i class="fa fa-sign-out" aria-hidden="true logout_fs"></i>
+                <i className="fa fa-sign-out" aria-hidden="true logout_fs"></i>
               </Link>
             </li>
           </ul>

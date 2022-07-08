@@ -172,7 +172,7 @@
   }
 }
 .registration {
-  margin-bottom: 20rem !important;
+  margin-bottom: 23rem !important;
 }
 .btn-reg {
   margin-right: 20px !important;
@@ -189,3 +189,14 @@
   outline: none;
   padding: 0.375rem 0.75rem;
 }
+
+
+.fa-fw{
+  margin-top: -2rem !important;
+}
+
+.reg-link{
+  text-decoration: none !important;
+}
+
+

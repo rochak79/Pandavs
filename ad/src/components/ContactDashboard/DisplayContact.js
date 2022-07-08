@@ -9,6 +9,11 @@ const DisplayContact = () => {
     axios
       .get("http://localhost:7000/api/contact/contacts")
       .then((result) => {
+        const totalContact = result.data.contact.length;
+        console.log(result.data.contact.length)
+        localStorage.setItem("totalContact", JSON.stringify(totalContact))
+        setContacts(result.data.contact);
+
         setContacts(result.data.contact);
         console.log(result.data.contact);
         // console.log(result.data.products);

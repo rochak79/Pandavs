@@ -24,6 +24,11 @@ const DisplayProducts = () => {
     axios
       .get("http://localhost:7000/api/product/products")
       .then((result) => {
+        const totalProduct = result.data.products.length;
+        // console.log(result.data.products.length)
+        localStorage.setItem("totalProduct", JSON.stringify(totalProduct))
+        setProducts(result.data.products);
+
         setProducts(result.data.products);
         console.log(result.data.products);
       })

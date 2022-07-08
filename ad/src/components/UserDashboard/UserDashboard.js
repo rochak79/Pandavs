@@ -3,6 +3,7 @@ import "./UserDashboard.css";
 import axiox from "axios";
 
 const UserDashboard = () => {
+ 
   const [data, setData] = useState([]);
 
   //   recieving data
@@ -10,9 +11,11 @@ const UserDashboard = () => {
     axiox
       .get(`http://localhost:7000/user/users`)
       .then((result) => {
-        console.log(result);
+        
+        const totalUser = result.data.user.length;
+        localStorage.setItem("totalUser", JSON.stringify(totalUser))
         setData(result.data.user);
-        console.log(result.data.user);
+        // console.log(result.data.user);
       })
       .then((error) => {
         const err = error.response.data.message;

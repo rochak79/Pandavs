@@ -11,6 +11,7 @@ import UserDashboard from "./UserDashboard/UserDashboard";
 import BlogDashboard from "./Blog/BlogDashboard";
 import AddBlog from "./Blog/AddBlog";
 import DisplayBlog from "./Blog/DisplayBlog";
+import Dash from "./Admin/Dash";
 
 const Mid = () => {
   return (
@@ -89,6 +90,7 @@ const Mid = () => {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Dash />} />
       </Routes>
     </>
   );

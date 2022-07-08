@@ -20,7 +20,7 @@ const Contact = () => {
     axios
       .post(`http://localhost:7000/api/contact/contact`, contact)
       .then((result) => {
-        console.log(result);
+        console.log(result.data.contact.length);
         if (result.status === 201) {
           toast.info("Message sent to admin!");
         }
