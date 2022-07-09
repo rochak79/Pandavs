@@ -26,24 +26,16 @@ const AboutUs = () => {
         </div>
         <div className="description">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-            repellendus molestiae expedita. Fugiat est eius voluptate iure quos,
-            non sequi pariatur nulla, corrupti labore inventore nesciunt. Quos
-            quasi magnam aut dolore repudiandae vitae odit illo aliquid delectus
-            animi id sint, assumenda ducimus qui voluptate esse? Porro, magni
-            hic assumenda error perferendis pariatur ratione maiores numquam
-            eius consequuntur ut nesciunt repellendus qui ipsa dolores libero
-            quaerat voluptates veritatis aliquam cumque animi quod voluptatem
-            sunt. Tempora blanditiis porro ea soluta! Possimus quam commodi
-            molestiae veniam odio facere ab asperiores eveniet, nisi, aspernatur
-            quae officiis deleniti similique quibusdam praesentium pariatur
-            impedit quia ex?
+            Hamro Garden was established with the intention of beautifying your
+            garden and making it look aesthetic. We are all aware of how nature
+            can have an impact on people's day to day lives. Amid city's busy
+            lives, people crave that touch and beauty of plants, and the plants
+            fulfill that purpose by giving you some unqiue therapeautic
+            experince by its beauty and its touch. Here's where we come in as a
+            team. We want to be a part of your gardening journey, whether at
+            work or at home and we will be at your service with regards to
+            gardening.
           </p>
-          <div className="btn">
-            <a href="#">
-              <button className="btn_seemore">See More</button>
-            </a>
-          </div>
         </div>
       </div>
       <div className="hh">
@@ -56,27 +48,27 @@ const AboutUs = () => {
           <img src={pot} alt="" />
           <h2>We Sell</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            natus quasi mollitia placeat deserunt sit sunt facilis quas delectus
-            sapiente.
+            We sell top quality products to our customers to ensure you have
+            everything you need at the right and best quality. The quality of
+            product isn't compromised and we will make sure of that.
           </p>
         </div>
         <div className="sub-cards">
           <img src={assis} alt="" />
           <h2>We Provide</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
-            reiciendis dolores at nam laboriosam dicta architecto consequuntur
-            libero quisquam provident!
+            We are always at your service and your inconvinience with regards to
+            any of our products concerns us very much so we would always help
+            you if you have any concerns regarding our product.
           </p>
         </div>
         <div className="sub-cards">
           <img src={care} alt="" />
           <h2>We Care</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis,
-            itaque asperiores sequi esse sunt aut consectetur sint eos
-            laudantium dicta.
+            We care about your needs and desired goal about your garden on how
+            you are looking forward to beautify it. We care about your order and
+            feedbacks are very important to us.
           </p>
         </div>
       </div>

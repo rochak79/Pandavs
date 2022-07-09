@@ -188,6 +188,7 @@ a.buy-btn:focus {
   background: #384aeb;
   color: #fff;
   transition: all 0.4s ease;
+  outline: none;
 }
 .offers {
   display: flex;

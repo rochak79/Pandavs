@@ -71,13 +71,19 @@ const CartScreen = ({ history }) => {
                         rounded
                       />
                     </Col>
-                    <Col md={3} className='cart_detail'>
+                    <Col md={2} className='cart_detail'>
                       <Link
                         to={`/product/${item.product}`}
                         className='cart_detail'
                       >
                         {item.name}
                       </Link>
+                    </Col>
+                    
+                    <Col md={2} className="cart_detail">
+
+                      {item.category}
+
                     </Col>
                     <Col md={2} className='cart_detail'>
                       Rs: {item.new_price}

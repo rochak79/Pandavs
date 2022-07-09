@@ -5,6 +5,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 const AddProduct = () => {
   const [name, setName] = useState("");
   const [old_price, setOprice] = useState("");
@@ -13,6 +14,7 @@ const AddProduct = () => {
   const [image, setImage] = useState("");
   const [stock, setStock] = useState("");
   const [discount, setDiscount] = useState("");
+  const [category, setCategory] = useState("");
 
   // submit
   const productadd = (e) => {
@@ -25,6 +27,7 @@ const AddProduct = () => {
       image,
       stock,
       discount,
+      category,
     };
     axios
       .post(`http://localhost:7000/api/product/addproduct`, submitData, {
@@ -33,7 +36,8 @@ const AddProduct = () => {
         },
       })
       .then((result) => {
-        console.log(result);
+      
+        
         toast.success("Product addedd successfully!!");
         window.setTimeout(function () {
           window.location.replace("/productdashboard");
@@ -97,6 +101,13 @@ const AddProduct = () => {
                   placeholder="Discount"
                   value={discount}
                   onChange={(e) => setDiscount(e.target.value)}
+                />
+                <input
+                  type="text"
+                  name=""
+                  placeholder="Category"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
                 />
                 <input
                   type="file"

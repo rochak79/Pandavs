@@ -34,15 +34,16 @@ const Blog = () => {
                     <h4 class="card-title blog-title">{data.title}</h4>
                     <p className="blog-date">{data.time}</p>
                     <p class="card-text">{data.blog}</p>
-                    <div className="blog-read">
+                   
+                  </div>
+                  <div className="blog-read">
                       <Link
                         to={"/blog/" + data._id}
-                        class="btn btn-primary blog-read"
+                        class=" blog-read btn-primary"
                       >
                         Read more.
                       </Link>
                     </div>
-                  </div>
                 </div>
               </div>
             </>

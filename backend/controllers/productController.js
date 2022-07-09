@@ -63,7 +63,7 @@ exports.updateProduct = async (req, res, next) => {
     old_price: req.body.old_price,
     quantity: req.body.quantity,
     desc: req.body.desc,
-    image: req.file.filename,
+   
     stock: req.body.stock,
     discount: req.body.discount,
   });

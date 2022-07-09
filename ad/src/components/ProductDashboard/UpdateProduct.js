@@ -3,6 +3,8 @@ import "./UpdateProduct.css";
 import update from "../images/update.jpg";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Updateproduct = () => {
   const [name, setName] = useState("");
@@ -10,20 +12,28 @@ const Updateproduct = () => {
   const [new_price, setNprice] = useState("");
   const [quantity, setQuantity] = useState("");
   const [desc, setDesc] = useState("");
-  const [image, setImage] = useState("");
+
   const [stock, setStock] = useState("");
   const [discount, setDiscount] = useState("");
   const [prodata, setProdata] = useState([]);
+  const [category, setCategory] = useState("");
+  
 
   const { id } = useParams();
   useEffect(() => {
     axios
       .get(`http://localhost:7000/api/product/` + id)
       .then((result) => {
-        console.log(result.data.product);
-        setProdata(result.data.product);
+        try {
+          setProdata(result.data.product);
         setName(result.data.name);
         setNprice(result.data.price);
+        
+          
+        } catch (error) {
+          toast.error("Failed to update")
+        }
+        
       })
       .catch();
   }, []);
@@ -37,19 +47,23 @@ const Updateproduct = () => {
       new_price,
       quantity,
       desc,
-      image,
+      
       stock,
       discount,
+      category
     };
 
     axios
       .put(`http://localhost:7000/api/product/${id}`, submitData)
       .then((result) => {
-        console.log(result);
-        window.alert("Product Updated!");
+        toast.success("Product Updated successfully!!");
+        window.setTimeout(function () {
+          window.location.replace("/productdashboard");
+        }, 2000);
+
       })
       .catch((error) => {
-        window.alert("Failed to Update product!");
+        toast.error("Failed to Update product!");
       });
   };
   return (
@@ -115,13 +129,13 @@ const Updateproduct = () => {
                 onChange={(e) => setDiscount(e.target.value)}
               />
               <input
-                type="file"
-                class="form-control"
-                id="exampleInputName"
-                placeholder="text"
-                name="image"
-                onChange={(e) => setImage(e.target.files[0])}
-              />
+                  type="text"
+                  name=""
+                  placeholder="Category"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                />
+              
               <button className="updateproductbtn" onClick={productupdate}>
                 Update Product
               </button>

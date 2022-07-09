@@ -52,7 +52,7 @@ const Contact = () => {
               <div className="text">
                 <h3>Address</h3>
                 <p>
-                  432 Banasthali Ktm, <br></br>Lekhnat tol
+                  Dillibazar, <br></br>Pipalbot
                   <br />
                   5405
                 </p>
@@ -64,7 +64,7 @@ const Contact = () => {
               </div>
               <div className="text">
                 <h3>Phone</h3>
-                <p>98101010</p>
+                <p>9810101010</p>
               </div>
             </div>
             <div className="boxx">

@@ -21,11 +21,11 @@ const BlogDetail = () => {
       });
   }, []);
   return (
-    <div>
+    <div className="container">
       <Link to="/blog">
-        <button className="goback">
+        <button className="product_back">
           {" "}
-          <i class="fas fa-arrow-left"></i> Go back
+          <i class="fas fa-arrow-left "></i> Go back
         </button>
       </Link>
       <div className="blog-detail">

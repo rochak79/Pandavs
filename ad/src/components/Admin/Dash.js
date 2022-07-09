@@ -19,7 +19,7 @@ const Dash = () => {
     <div className="card text-dark">
       <div className="card-body">
         <h5 className="card-title">There are {final} users enrolled in your site.</h5>
-        <Link to="/userdashboard"><button className="btn btn-primary">See Users</button></Link>
+        <Link to="/userdashboard"><button className="btn btn-primary p-2">See Users</button></Link>
         
       </div>
     </div>
@@ -28,7 +28,7 @@ const Dash = () => {
     <div className="card text-dark">
       <div className="card-body">
         <h5 className="card-title">There are {finalP} products in your site.</h5>
-        <Link to="/displayproducts"><button className="btn btn-primary">See Products</button></Link>
+        <Link to="/displayproducts"><button className="btn btn-primary p-2">See Products</button></Link>
         
       </div>
     </div>
@@ -38,7 +38,7 @@ const Dash = () => {
       <div className="card-body">
         <h5 className="card-title">You have {finalc} messages.</h5>
         
-        <Link to="/displaycontact"><button className="btn btn-primary">See Messages</button></Link>
+        <Link to="/displaycontact"><button className="btn btn-primary p-2">See Messages</button></Link>
       </div>
     </div>
   </div>

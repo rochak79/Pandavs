@@ -45,13 +45,10 @@ const DisplayBlog = () => {
               <td className="blog-table">{blog.title}</td>
               <td className="blog-table">{blog.blog}</td>
               <td>
-                <button className="btn btn_update">
-                  <Link to={"/updateproduct/" + blog._id}>
-                    <button className="btn btn_update">Update</button>
-                  </Link>
-                </button>
-                |
-                <button className="btn btn_delete" onClick={deleteBlog}>
+               
+
+                
+                <button className="btn btn_delete" onClick={()=>deleteBlog(blog._id)}>
                   Delete
                 </button>
               </td>

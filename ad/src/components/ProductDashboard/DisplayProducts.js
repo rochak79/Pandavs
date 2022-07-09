@@ -50,6 +50,7 @@ const DisplayProducts = () => {
               <th>Price</th>
               <th>Discount</th>
               <th>Description</th>
+              <th>Category</th>
               <th></th>
             </tr>
             {products.map((data) => {
@@ -73,6 +74,7 @@ const DisplayProducts = () => {
                     </td>
                     <td>{data.discount}%</td>
                     <td>{data.desc}</td>
+                    <td>{data.category}</td>
                     <td>
                       <button className="btn btn_update">
                         <Link to={"/updateproduct/" + data._id}>

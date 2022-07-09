@@ -19,7 +19,7 @@ const AddBlog = () => {
     axios
       .post(`http://localhost:7000/blog/createblog`, blogData)
       .then((result) => {
-        console.log(result.data.blog);
+        
         setBlog(result.data.blog);
         toast.success("Blog addedd successfully!!");
         window.setTimeout(function () {

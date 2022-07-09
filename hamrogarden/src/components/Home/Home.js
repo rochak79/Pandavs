@@ -11,6 +11,8 @@ import f from "../../images/f.jpg";
 import s from "../../images/s.jpg";
 import fe from "../../images/fe.jpg";
 import to from "../../images/to.jpg";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const form = useRef();
@@ -21,7 +23,8 @@ const Home = () => {
       "service_4abkaml",
       "template_8lz8jgl",
       form.current,
-      "ZV-Evv-w2XWSFeipC"
+      "ZV-Evv-w2XWSFeipC",
+      toast.success("Subscribed!")
     );
     e.target.reset().then(
       (result) => {
@@ -32,6 +35,7 @@ const Home = () => {
       }
     );
   };
+
 
   return (
     <>
@@ -46,7 +50,7 @@ const Home = () => {
             categories. We hope you enjoy our product as much as we enjoy
             offering them to you.
           </h5>
-          <button className="home_btn">Browse More</button>
+          <Link to="/about"><button className="home_btn">Browse More</button></Link>
         </div>
       </div>
 
@@ -55,13 +59,13 @@ const Home = () => {
         <h3 className="trusted-h">Your trusted partner!</h3>
         <p>Give us a chance to serve the best things of gardening!</p>
         <p>Your trust is all we want.</p>
-        <button className="partner-btn">Shop Now</button>
+        <Link to="/products"><button className="partner-btn">Shop Now</button></Link>
       </div>
 
       {/* Card */}
       <h3 className="for-you text-center">For you..</h3>
       <div class="container cards-list mb-5">
-        <Link to="/">
+        <Link to="/products">
           <div class="card_1">
             <div class="card_image">
               {" "}
@@ -72,7 +76,7 @@ const Home = () => {
             </div>
           </div>
         </Link>
-        <Link to="/">
+        <Link to="/products">
           <div class="card_1">
             <div class="card_image">
               {" "}
@@ -83,7 +87,7 @@ const Home = () => {
             </div>
           </div>
         </Link>
-        <Link to="/">
+        <Link to="/products">
           <div class="card_1">
             <div class="card_image">
               {" "}
@@ -94,7 +98,7 @@ const Home = () => {
             </div>
           </div>
         </Link>
-        <Link to="/">
+        <Link to="/products">
           <div class="card_1 mb-5">
             <div class="card_image">
               {" "}
@@ -116,7 +120,7 @@ const Home = () => {
               <b>UPTO 50% OFF</b>
             </h3>
             <p>Find out more!</p>
-            <button className="cart-inner-btn">Shop Now</button>
+            <Link to="/products"><button className="cart-inner-btn">Shop Now</button></Link>
           </div>
         </div>
       </div>
@@ -177,6 +181,17 @@ const Home = () => {
       </div>
       {/* sandeep about us */}
       {/* <OurTeams /> */}
+      <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
     </>
   );
 };

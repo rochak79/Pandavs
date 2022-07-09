@@ -13,9 +13,8 @@ const Footer = () => {
                   {/* <img src={test} className="img" alt="logo" /> */}
                 </a>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Quis ipsum{" "}
+                  Hassle free gardening experience right at your doorstep so
+                  WHAT ARE YOU WAITING FOR???{" "}
                 </p>
                 <div class="hr"></div>
                 <h6>

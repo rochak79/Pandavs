@@ -35,7 +35,7 @@ const UpdateProfile = () => {
     axios
       .put(`http://localhost:7000/user/user/${id}`, updatedData)
       .then((result) => {
-        const userData = result.data.UserUpdated;
+        const userData = result.data.user;
         const oldUser = localStorage.getItem("userData");
         const finalOldUser = JSON.parse(oldUser);
         console.log("Old:", finalOldUser);

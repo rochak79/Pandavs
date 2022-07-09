@@ -27,18 +27,26 @@ const UserDashboard = () => {
       <h2>Our Registered users.</h2>
       <table className="table__contact">
         <tr>
-          <th>Id</th>
+          
           <th>Name</th>
           <th>Email</th>
           <th>Address</th>
+          <th>Role</th>
+          <th>Phone</th>
+          <th>Gender</th>
+          <th>Description</th>
         </tr>
         {data.map((d) => {
           return (
             <tr>
-              <td>{d._id}</td>
+              
               <td>{d.name}</td>
               <td>{d.email}</td>
               <td>{d.address}</td>
+              <td>{d.role}</td>
+              <td>{d.phone}</td>
+              <td>{d.gender}</td>
+              <td>{d.desc}</td>
             </tr>
           );
         })}

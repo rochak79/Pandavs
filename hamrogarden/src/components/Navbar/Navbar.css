@@ -237,3 +237,8 @@ section {
   background: gainsboro !important;
   margin-top: 80%;
 }
+ .header-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }

@@ -19,76 +19,17 @@ const Navbar = () => {
       <section className="ftco-section">
         <div className="container-fluid px-md-5">
           <div className="row justify-content-between">
-            <div className="col-md-8 order-md-last">
+            <div className="col-md-12 order-md-last">
               <div className="row">
-                <div className="col-md-6 text-center">
-                  <Link className="navbar-brand" to="#">
+                <div className="col-md-12 ">
+                  <Link className="navbar-brand text-center header-main" to="/">
                     <h2>HAMRO GARDEN</h2>
                   </Link>
                 </div>
-                <div className="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
-                  <form action="#" className="searchform order-lg-last">
-                    <div className="form-group d-flex">
-                      <form className="form-inline my-2 my-lg-0">
-                        <div class="input-group rounded">
-                          <input
-                            type="search"
-                            class="form-control rounded"
-                            placeholder="Search"
-                            aria-label="Search"
-                            aria-describedby="search-addon"
-                          />
-                          <button
-                            class="input-group-text border-0"
-                            id="search-addon"
-                          >
-                            <i class="fas fa-search"></i>
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </form>
-                </div>
+                
               </div>
             </div>
-            <div className="col-md-4 d-flex">
-              <div className="social-media">
-                <p className="mb-0 d-flex">
-                  <Link
-                    to="#"
-                    className="d-flex align-items-center justify-content-center"
-                  >
-                    <span className="fa fa-facebook">
-                      <i className="sr-only">Facebook</i>
-                    </span>
-                  </Link>
-                  <Link
-                    to="#"
-                    className="d-flex align-items-center justify-content-center"
-                  >
-                    <span className="fa fa-twitter">
-                      <i className="sr-only">Twitter</i>
-                    </span>
-                  </Link>
-                  <Link
-                    to="#"
-                    className="d-flex align-items-center justify-content-center"
-                  >
-                    <span className="fa fa-instagram">
-                      <i className="sr-only">Instagram</i>
-                    </span>
-                  </Link>
-                  <Link
-                    to="#"
-                    className="d-flex align-items-center justify-content-center"
-                  >
-                    <span className="fa fa-dribbble">
-                      <i className="sr-only">Dribbble</i>
-                    </span>
-                  </Link>
-                </p>
-              </div>
-            </div>
+
           </div>
         </div>
         <nav
@@ -185,76 +126,18 @@ const Navbar = () => {
       <section className="ftco-section">
         <div className="container-fluid px-md-5">
           <div className="row justify-content-between">
-            <div className="col-md-8 order-md-last">
+            <div className="col-md-12 order-md-last">
               <div className="row">
-                <div className="col-md-6 text-center">
-                  <Link className="navbar-brand" to="#">
+                <div className="col-md-12 ">
+                  <Link className="navbar-brand text-center header-main" to="/">
                     <h2>HAMRO GARDEN</h2>
                   </Link>
                 </div>
-                <div className="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
-                  <div className="form-group d-flex">
-                    <form className="form-inline my-2 my-lg-0">
-                      <div class="input-group rounded">
-                        <input
-                          type="search"
-                          class="form-control rounded"
-                          placeholder="Search"
-                          aria-label="Search"
-                          aria-describedby="search-addon"
-                        />
-                        <button
-                          class="input-group-text border-0"
-                          id="search-addon"
-                        >
-                          <i class="fas fa-search"></i>
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
+                
               </div>
             </div>
-            <div className="col-md-4 d-flex">
-              <div className="social-media">
-                <p className="mb-0 d-flex">
-                  <Link
-                    to="#"
-                    className="d-flex align-items-center justify-content-center"
-                  >
-                    <span className="fa fa-facebook">
-                      <i className="sr-only">Facebook</i>
-                    </span>
-                  </Link>
-                  <Link
-                    to="#"
-                    className="d-flex align-items-center justify-content-center"
-                  >
-                    <span className="fa fa-twitter">
-                      <i className="sr-only">Twitter</i>
-                    </span>
-                  </Link>
-                  <Link
-                    to="#"
-                    className="d-flex align-items-center justify-content-center"
-                  >
-                    <span className="fa fa-instagram">
-                      <i className="sr-only">Instagram</i>
-                    </span>
-                  </Link>
-                  <Link
-                    to="#"
-                    className="d-flex align-items-center justify-content-center"
-                  >
-                    <span className="fa fa-dribbble">
-                      <i className="sr-only">Dribbble</i>
-                    </span>
-                  </Link>
-                </p>
-              </div>
             </div>
           </div>
-        </div>
         <nav
           className="navbar navbar-expand-lg ftco_navbar ftco-navbar-light"
           id="ftco-navbar"
